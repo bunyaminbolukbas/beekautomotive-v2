@@ -17,8 +17,8 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "Beek Automotive - BMW & MINI Specialist",
-  description: "Wij ademen automotive uitmuntendheid. Onze toewijding aan MINI en BMW is meer dan alleen zakelijk - het is een oproep.",
+  title: "Beek Automotive - Premium Occasions",
+  description: "Bij Beek Automotive vind je handgeselecteerde premium occasions van de hoogste kwaliteit. Persoonlijke service, transparantie en expertise staan bij ons centraal.",
 };
 
 export default function RootLayout({ children }) {
