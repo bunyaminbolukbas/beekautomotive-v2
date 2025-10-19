@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fonts */
+@layer base {
+  h1, h2, h3, h4, h5, h6,
+  .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6 {
+    font-family: var(--font-outfit), sans-serif;
+  }
+
+  body {
+    font-family: var(--font-inter), sans-serif;
+    background-color: #FAFAFA;
+  }
+}
+
+/* Relume custom heading classes */
+@layer components {
+  .heading-h1 {
+    @apply text-6xl md:text-9xl lg:text-10xl;
+  }
+
+  .heading-h2 {
+    @apply text-5xl md:text-7xl lg:text-8xl;
+  }
+
+  .heading-h3 {
+    @apply text-4xl md:text-6xl lg:text-7xl;
+  }
+
+  .heading-h4 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .heading-h5 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .heading-h6 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+}
+
+/* Relume scheme color classes */
+@layer utilities {
+  .bg-scheme-background {
+    background-color: #FAFAFA;
+  }
+
+  .bg-scheme-background-primary {
+    @apply bg-background-primary;
+  }
+
+  .text-scheme-text {
+    @apply text-text;
+  }
+
+  .border-scheme-border {
+    @apply border-border;
+  }
+}

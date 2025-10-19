@@ -1,0 +1,17 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'd22po4pjz3o32e.cloudfront.net',
+        pathname: '/**',
+      },
+    ],
+  },
+  experimental: {
+    optimizePackageImports: ['@relume_io/relume-ui', 'react-icons'],
+  },
+}
+
+module.exports = nextConfig
