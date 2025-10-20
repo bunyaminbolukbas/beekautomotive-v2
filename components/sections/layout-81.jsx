@@ -11,8 +11,6 @@ export function Layout81() {
   const buttons = [
     { title: "Lees meer", variant: "secondary", iconRight: <RxChevronRight /> },
   ];
-  const video = "https://d22po4pjz3o32e.cloudfront.net/placeholder-video.mp4";
-  const videoType = "video/mp4";
 
   return (
     <section className="relative px-[5%] py-16 md:py-24 lg:py-28">
@@ -39,12 +37,7 @@ export function Layout81() {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 z-0">
-        <video className="absolute inset-0 aspect-video size-full object-cover" autoPlay loop muted>
-          <source src={video} type={videoType} />
-        </video>
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(18, 18, 18, 0.7)' }} />
-      </div>
+      <div className="absolute inset-0 z-0" style={{ backgroundColor: '#121212' }} />
     </section>
   );
 }
