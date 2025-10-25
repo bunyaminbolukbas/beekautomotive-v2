@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "motion/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BiLogoFacebookCircle,
   BiLogoInstagram,
@@ -17,6 +17,24 @@ const ConditionalRender = ({ condition, children }) => {
 
 const useRelume = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const animateMenu = isMenuOpen
     ? { menu: "open", menu2: "openSecond" }
@@ -25,18 +43,30 @@ const useRelume = () => {
     toggleMenu,
     animateMenu,
     isMenuOpen,
+    isScrolled,
   };
 };
 
 export function Navbar17() {
   const useActive = useRelume();
   return (
-    <section className="relative z-[999] flex min-h-16 w-full items-center border-b border-b-scheme-border bg-scheme-background px-[5%] md:min-h-18">
+    <section
+      className={`fixed top-0 left-0 right-0 z-[999] flex w-full items-center border-b border-b-scheme-border bg-scheme-background px-[5%] transition-all duration-300 ease-in-out ${
+        useActive.isScrolled
+          ? 'min-h-14 py-2 md:min-h-16 shadow-md'
+          : 'min-h-20 py-4 md:min-h-24'
+      }`}
+    >
       <div className="mx-auto flex size-full items-center justify-between">
         <a href="#">
           <img
             src="https://d22po4pjz3o32e.cloudfront.net/logo-image.svg"
             alt="Relume placeholder logo"
+            className={`transition-all duration-300 ease-in-out ${
+              useActive.isScrolled
+                ? 'h-8 md:h-10'
+                : 'h-12 md:h-14'
+            }`}
           />
         </a>
         <div className="flex items-center justify-center gap-2 lg:gap-4">

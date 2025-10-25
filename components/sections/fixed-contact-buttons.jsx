@@ -1,6 +1,6 @@
 'use client';
 
-import { Phone, MessageCircle, Mail, Calendar } from 'lucide-react';
+import { Phone, MessageCircle, Mail } from 'lucide-react';
 
 // WhatsApp SVG Component
 const WhatsAppIcon = ({ className }) => (
@@ -31,18 +31,11 @@ export function FixedContactButtons() {
       href: 'mailto:info@beekautomotive.nl',
       color: 'bg-black hover:bg-black',
       tooltip: 'info@beekautomotive.nl'
-    },
-    {
-      icon: Calendar,
-      label: 'Afspraak',
-      href: '/contact',
-      color: 'bg-black hover:bg-black',
-      tooltip: 'afspraak@beekautomotive.nl'
     }
   ];
 
   return (
-    <div className="hidden lg:block fixed right-0 top-1/2 transform -translate-y-3/4 z-40">
+    <div className="fixed right-0 top-1/2 transform -translate-y-3/4 z-40">
       <div className="flex flex-col space-y-1">
         {contactButtons.map((button, index) => {
           const IconComponent = button.icon;

@@ -18,6 +18,25 @@ const ConditionalRender = ({ condition, children }) => {
 
 const useRelume = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
   const animateMenu = isMenuOpen
@@ -28,6 +47,7 @@ const useRelume = () => {
     closeMenu,
     animateMenu,
     isMenuOpen,
+    isScrolled,
   };
 };
 
@@ -51,26 +71,28 @@ export function Navbar17() {
   }, [useActive.isMenuOpen]);
 
   return (
-    <section className="sticky top-0 z-[999] flex min-h-16 w-full items-center border-b border-b-scheme-border px-[5%] md:min-h-18" style={{ backgroundColor: '#FAFAFA' }}>
+    <section
+      className={`fixed top-0 left-0 right-0 z-[999] flex w-full items-center px-[5%] transition-all duration-300 ease-in-out ${
+        useActive.isScrolled
+          ? 'min-h-14 py-2 md:min-h-16 shadow-md bg-neutral-darkest/95 backdrop-blur-md border-b border-b-white/10'
+          : 'min-h-20 py-4 md:min-h-24 bg-transparent border-b border-b-transparent'
+      }`}
+    >
       <div className="mx-auto flex size-full items-center justify-between">
         <Link href="/">
-          <img
-            src="/images/beek-automotive-logozwart (1).png"
-            alt="Beek Automotive logo"
-            className="h-10 w-auto md:h-12 lg:h-14"
-          />
+          {/* Logo komt hier later */}
         </Link>
         <div className="flex items-center justify-center gap-2 lg:gap-4">
-          <Button title="Menu" size="sm" className="px-4 py-1 md:px-6 md:py-2">
+          <span className="text-sm font-medium text-white md:text-base">
             Menu
-          </Button>
+          </span>
           <button
             className="-mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:mr-0"
             onClick={useActive.toggleMenu}
           >
             <span className="relative flex size-6 flex-col items-center justify-center">
               <motion.span
-                className="absolute top-[3px] h-0.5 w-full bg-neutral-darkest"
+                className="absolute top-[3px] h-0.5 w-full bg-white"
                 animate={useActive.animateMenu.menu}
                 variants={{
                   open: {
@@ -84,7 +106,7 @@ export function Navbar17() {
                 }}
               />
               <motion.span
-                className="absolute h-0.5 w-full bg-neutral-darkest"
+                className="absolute h-0.5 w-full bg-white"
                 animate={useActive.animateMenu.menu}
                 variants={{
                   open: {
@@ -114,7 +136,7 @@ export function Navbar17() {
                 }}
               />
               <motion.span
-                className="absolute h-0.5 w-full bg-neutral-darkest"
+                className="absolute h-0.5 w-full bg-white"
                 animate={useActive.animateMenu.menu2}
                 variants={{
                   open: {
@@ -144,7 +166,7 @@ export function Navbar17() {
                 }}
               />
               <motion.span
-                className="absolute bottom-[3px] h-0.5 w-full bg-neutral-darkest"
+                className="absolute bottom-[3px] h-0.5 w-full bg-white"
                 animate={useActive.animateMenu.menu}
                 variants={{
                   open: {
@@ -163,7 +185,11 @@ export function Navbar17() {
       </div>
       <AnimatePresence>
         <ConditionalRender condition={useActive.isMenuOpen}>
-          <div className="fixed right-0 top-[4rem] md:top-[4.5rem] h-[calc(100vh-4rem)] md:h-[calc(100vh-4.5rem)] w-full md:w-1/2 overflow-hidden">
+          <div className={`fixed right-0 w-full md:w-1/2 overflow-hidden transition-all duration-300 ease-in-out ${
+            useActive.isScrolled
+              ? 'top-[3.5rem] md:top-[4rem] h-[calc(100vh-3.5rem)] md:h-[calc(100vh-4rem)]'
+              : 'top-[5rem] md:top-[6rem] h-[calc(100vh-5rem)] md:h-[calc(100vh-6rem)]'
+          }`}>
             <motion.div
               variants={{ open: { opacity: 1 }, close: { opacity: 0 } }}
               animate={useActive.animateMenu.menu}
@@ -215,13 +241,6 @@ export function Navbar17() {
                   className="heading-h3 flex grow items-center justify-end border-t border-black/20 px-[5%] py-4 font-bold last:border-b last:border-b-black/20 md:py-2"
                 >
                   Contact
-                </Link>
-                <Link
-                  href="/voertuig"
-                  onClick={useActive.closeMenu}
-                  className="heading-h3 flex grow items-center justify-end border-t border-black/20 px-[5%] py-4 font-bold last:border-b last:border-b-black/20 md:py-2"
-                >
-                  Voertuig
                 </Link>
               </div>
               <div className="flex min-h-18 items-center justify-end gap-x-4 px-[5%]">

@@ -1,128 +1,101 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import React, { useState } from "react";
+import React from "react";
 import {
   BiLogoFacebookCircle,
   BiLogoInstagram,
-  BiLogoLinkedinSquare,
 } from "react-icons/bi";
-import { FaXTwitter } from "react-icons/fa6";
-
-const useForm = () => {
-  const [email, setEmail] = useState("");
-  const handleSetEmail = (event) => {
-    setEmail(event.target.value);
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log({ email });
-  };
-  return {
-    email,
-    handleSetEmail,
-    handleSubmit,
-  };
-};
+import { FaWhatsapp } from "react-icons/fa";
 
 export function Footer1() {
-  const formState = useForm();
   return (
-    <footer className="px-[5%] py-12 md:py-18 lg:py-20 text-white" style={{ backgroundColor: '#121212' }}>
-      <div className="container">
-        <div className="grid grid-cols-1 gap-x-[8vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[0.75fr_1fr] lg:gap-y-4 lg:pb-20">
-          <div className="flex flex-col">
-            <a href="/" className="mb-5 md:mb-6">
-              <img
-                src="/images/beekautomotivezwart.png"
-                alt="Beek Automotive logo"
-                className="inline-block h-12 w-auto"
-              />
-            </a>
-            <p className="mb-5 md:mb-6">
-              Blijf op de hoogte van onze nieuwste leveringsoplossingen en
-              speciale aanbiedingen
-            </p>
-            <div className="w-full max-w-md">
-              <form
-                className="mb-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-[1fr_max-content] md:gap-y-4"
-                onSubmit={formState.handleSubmit}
-              >
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Vul je e-mail in"
-                  value={formState.email}
-                  onChange={formState.handleSetEmail}
-                />
-                <Button title="Inschrijven" variant="secondary" size="sm">
-                  Inschrijven
-                </Button>
-              </form>
-              <p className="text-tiny text-white/60">
-                Door je in te schrijven ga je akkoord met onze privacyverklaring
-                en ontvang je updates
-              </p>
-            </div>
+    <footer className="px-[5%] py-20 md:py-24 lg:py-28 text-white" style={{ backgroundColor: '#1a1a1a' }}>
+      <div className="container max-w-7xl mx-auto">
+        {/* Witte lijn boven */}
+        <div className="h-px w-full bg-white/30 mb-20" />
+
+        {/* Main content */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20">
+          {/* Logo - Later toevoegen */}
+          <div className="flex-shrink-0">
+            {/* Logo komt hier later */}
           </div>
-          <div className="grid grid-cols-1 items-start gap-y-10 sm:grid-cols-3 sm:gap-x-6 md:gap-x-8 md:gap-y-4 sm:divide-x sm:divide-white/20">
-            {/* Service */}
-            <div className="flex flex-col items-start justify-start sm:pr-6 md:pr-8">
-              <h2 className="mb-3 font-semibold md:mb-4 text-white">Service</h2>
-              <ul>
-                <li className="text-small py-2">
-                  <a href="/financiering" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
-                    <span>Financieringen</span>
+
+          {/* Kolommen - rechterkant */}
+          <div className="flex gap-16 lg:gap-24 xl:gap-32 flex-1 justify-end">
+            {/* Links */}
+            <div className="flex flex-col gap-2">
+              <ul className="space-y-2.5">
+                <li>
+                  <a href="/" className="text-sm text-white/70 hover:text-white transition-colors">
+                    Home
                   </a>
                 </li>
-                <li className="text-small py-2">
-                  <a href="#" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
-                    <span>Import</span>
+                <li>
+                  <a href="/aanbod" className="text-sm text-white/70 hover:text-white transition-colors">
+                    Aanbod
                   </a>
                 </li>
-                <li className="text-small py-2">
-                  <a href="/contact" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
-                    <span>Contact</span>
+                <li>
+                  <a href="/services-afleverpakket" className="text-sm text-white/70 hover:text-white transition-colors">
+                    Service
+                  </a>
+                </li>
+                <li>
+                  <a href="/over-ons" className="text-sm text-white/70 hover:text-white transition-colors">
+                    Over ons
+                  </a>
+                </li>
+                <li>
+                  <a href="/reviews" className="text-sm text-white/70 hover:text-white transition-colors">
+                    Reviews
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="text-sm text-white/70 hover:text-white transition-colors">
+                    Contact
                   </a>
                 </li>
               </ul>
             </div>
 
             {/* Gegevens */}
-            <div className="flex flex-col items-start justify-start sm:px-6 md:px-8">
-              <h2 className="mb-3 font-semibold md:mb-4 text-white">Gegevens</h2>
-              <ul className="space-y-2">
-                <li className="text-small">
-                  <a href="tel:+31857926363" className="text-white hover:opacity-80 transition-opacity">
+            <div className="flex flex-col gap-2">
+              <h3 className="text-sm font-normal tracking-wider mb-2">Gegevens</h3>
+              <ul className="space-y-2.5">
+                <li>
+                  <a href="tel:+31857926363" className="text-sm text-white/70 hover:text-white transition-colors">
                     +31 (0)85 792 6363
                   </a>
                 </li>
-                <li className="text-small">
-                  <a href="mailto:info@beekautomotive.nl" className="text-white hover:opacity-80 transition-opacity">
-                    info@beekautomotive.nl
+                <li>
+                  <a href="mailto:info@beekautomotive.nl" className="text-sm text-white/70 hover:text-white transition-colors uppercase">
+                    INFO@BEEKAUTOMOTIVE.NL
                   </a>
                 </li>
-                <li className="text-small text-white">
+                <li className="text-sm text-white/70">
                   <p>Het Laar 6</p>
                   <p>6733 BZ, Wekerom</p>
                 </li>
                 <li className="flex gap-3 pt-2">
-                  <a href="#" className="text-white hover:opacity-80 transition-opacity">
-                    <BiLogoFacebookCircle className="size-6" />
+                  <a href="https://wa.me/31857926363" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">
+                    <FaWhatsapp className="size-5" />
                   </a>
-                  <a href="#" className="text-white hover:opacity-80 transition-opacity">
-                    <BiLogoInstagram className="size-6" />
+                  <a href="#" className="text-white/70 hover:text-white transition-colors">
+                    <BiLogoFacebookCircle className="size-5" />
+                  </a>
+                  <a href="#" className="text-white/70 hover:text-white transition-colors">
+                    <BiLogoInstagram className="size-5" />
                   </a>
                 </li>
               </ul>
             </div>
 
             {/* Showroom */}
-            <div className="flex flex-col items-start justify-start sm:pl-6 md:pl-8">
-              <h2 className="mb-3 font-semibold md:mb-4 text-white">Showroom</h2>
-              <ul className="space-y-1">
-                <li className="text-small text-white">
+            <div className="flex flex-col gap-2 pl-8 lg:pl-12 border-l border-white/30">
+              <h3 className="text-sm font-normal tracking-wider mb-2">Showroom</h3>
+              <ul className="space-y-2.5">
+                <li className="text-sm text-white/70">
                   <p>MA-VR: 9.00 - 18.00</p>
                   <p>ZA: Op afspraak</p>
                 </li>
@@ -130,18 +103,23 @@ export function Footer1() {
             </div>
           </div>
         </div>
-        <div className="h-px w-full bg-white/20" />
-        <div className="text-small flex flex-col-reverse items-start justify-between pt-6 pb-4 md:flex-row md:items-center md:pt-8 md:pb-0">
-          <p className="mt-6 md:mt-0 text-white/60">© Beek Automotive 2025</p>
-          <ul className="text-small grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 md:grid-flow-col md:gap-x-6 md:gap-y-0">
-            <li className="underline">
-              <a href="#" className="text-white/60 hover:text-white transition-colors">Privacybeleid</a>
+
+        {/* Witte lijn onder */}
+        <div className="h-px w-full bg-white/30 mb-8" />
+
+        {/* Bottom */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <p className="text-sm text-white/50">© BBE Operations 2025</p>
+          <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm">
+            <li>
+              <a href="#" className="text-white/50 hover:text-white transition-colors">
+                Algemene voorwaarden
+              </a>
             </li>
-            <li className="underline">
-              <a href="#" className="text-white/60 hover:text-white transition-colors">Gebruiksvoorwaarden</a>
-            </li>
-            <li className="underline">
-              <a href="#" className="text-white/60 hover:text-white transition-colors">Cookieinstellingen</a>
+            <li>
+              <a href="#" className="text-white/50 hover:text-white transition-colors">
+                Privacyverklaring
+              </a>
             </li>
           </ul>
         </div>
