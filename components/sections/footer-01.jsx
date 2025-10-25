@@ -17,12 +17,12 @@ export function Footer1() {
         {/* Main content */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20">
           {/* Logo - Later toevoegen */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 mb-8 lg:mb-0">
             {/* Logo komt hier later */}
           </div>
 
           {/* Kolommen - rechterkant */}
-          <div className="flex gap-16 lg:gap-24 xl:gap-32 flex-1 justify-end">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-24 2xl:gap-32 w-full lg:w-auto lg:flex-1 lg:justify-end">
             {/* Links */}
             <div className="flex flex-col gap-2">
               <ul className="space-y-2.5">
@@ -92,7 +92,7 @@ export function Footer1() {
             </div>
 
             {/* Showroom */}
-            <div className="flex flex-col gap-2 pl-8 lg:pl-12 border-l border-white/30">
+            <div className="flex flex-col gap-2 lg:pl-12 lg:border-l lg:border-white/30">
               <h3 className="text-sm font-normal tracking-wider mb-2">Showroom</h3>
               <ul className="space-y-2.5">
                 <li className="text-sm text-white/70">
