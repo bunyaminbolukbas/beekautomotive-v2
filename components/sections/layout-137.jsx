@@ -46,10 +46,10 @@ function StatCard({ number, suffix, title }) {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}
     >
-      <div className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
+      <div className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-white">
         {count}{suffix}
       </div>
-      <div className="text-base md:text-lg font-medium tracking-wide text-gray-600">
+      <div className="text-base md:text-lg font-medium tracking-wide text-gray-300">
         {title}
       </div>
     </div>
@@ -58,23 +58,23 @@ function StatCard({ number, suffix, title }) {
 
 export function Layout137() {
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-black">
       <div className="container max-w-lg text-center">
         <div className="flex flex-col items-center justify-start">
           <FadeIn>
             <div className="mb-5 md:mb-6">
               <img
-                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
+                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon-white.svg"
                 className="size-12"
                 alt="Relume logo"
               />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h3 className="heading-h3 font-bold">Maatwerk</h3>
+            <h3 className="heading-h3 font-bold text-white">Maatwerk</h3>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="text-medium mt-5 md:mt-6">
+            <p className="text-medium mt-5 md:mt-6 text-gray-300">
               Het kopen van een auto is voor ons altijd maatwerk waarbij onze
               klanten centraal staan. Ben je op zoek naar een bepaald merk, model
               of type maar staat je droomauto er niet tussen? Geen paniek, we gaan
