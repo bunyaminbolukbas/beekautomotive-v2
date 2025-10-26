@@ -6,11 +6,11 @@ import { Testimonial17 } from "@/components/sections/testimonial-17";
 
 export default function VoertuigPage() {
   return (
-    <>
+    <div className="pt-24 md:pt-28">
       <ProductHeader7 />
       <Cta1 />
       <Layout81 />
       <Testimonial17 />
-    </>
+    </div>
   );
 }

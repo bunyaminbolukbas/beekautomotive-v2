@@ -15,7 +15,7 @@ import { Layout81Review } from "@/components/sections/layout-81-review";
 
 export default function ReviewsPage() {
   return (
-    <>
+    <div className="pt-24 md:pt-28">
       <Header62 />
       <Layout1 />
       <Testimonial13 />
@@ -29,6 +29,6 @@ export default function ReviewsPage() {
       <Testimonial13_4 />
       <Layout1_4 />
       <Layout81Review />
-    </>
+    </div>
   );
 }

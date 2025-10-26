@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
     <html lang="nl" className={`${inter.variable} ${outfit.variable}`}>
       <body className={inter.className}>
         <Navbar17 />
-        {children}
+        <main>
+          {children}
+        </main>
         <FixedContactButtons />
         <Footer1 />
       </body>

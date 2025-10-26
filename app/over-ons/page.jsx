@@ -7,12 +7,12 @@ import { Testimonial17 } from "@/components/sections/testimonial-17";
 
 export default function OverOnsPage() {
   return (
-    <>
+    <div className="pt-24 md:pt-28">
       <Header64 />
       <Layout22 />
       <Team12 />
       <Faq14 />
       <Testimonial17 />
-    </>
+    </div>
   );
 }

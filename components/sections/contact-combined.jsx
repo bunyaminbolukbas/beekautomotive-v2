@@ -10,9 +10,19 @@ export function ContactCombined() {
   return (
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
+        {/* Page Title */}
+        <div className="mb-12 md:mb-16 lg:mb-20 text-center">
+          <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl mb-5 md:mb-6">
+            Contact
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Neem contact met ons op voor vragen, informatie of een afspraak. We helpen je graag verder.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-x-8 lg:gap-x-12">
           {/* Links: Google Maps */}
-          <div className="order-3 md:order-1">
+          <div className="order-3 md:order-1 relative group">
             <iframe
               src="https://maps.google.com/maps?q=Het+Laar+6,+Wekerom&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
@@ -23,6 +33,17 @@ export function ContactCombined() {
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-[500px] rounded-lg"
             ></iframe>
+            {/* Clickable overlay */}
+            <a
+              href="https://maps.google.com/maps?q=Het+Laar+6,+Wekerom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-colors rounded-lg"
+            >
+              <span className="opacity-0 group-hover:opacity-100 bg-white px-4 py-2 rounded-lg shadow-lg font-semibold transition-opacity">
+                Open in Kaarten
+              </span>
+            </a>
           </div>
 
           {/* Midden: Showroom, Bedrijfsgegevens, Contact */}
