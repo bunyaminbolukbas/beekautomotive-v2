@@ -7,7 +7,7 @@ import { BiSolidStar } from "react-icons/bi";
 
 export function Layout81Review() {
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="px-[5%] py-16 md:py-24 lg:py-28 min-h-screen snap-start flex items-center justify-center">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <FadeIn delay={0.2} className="order-last md:order-first">

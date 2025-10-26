@@ -15,7 +15,7 @@ import { Layout81Review } from "@/components/sections/layout-81-review";
 
 export default function ReviewsPage() {
   return (
-    <div className="pt-24 md:pt-28">
+    <div className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
       <Header62 />
       <Layout1 />
       <Testimonial13 />
