@@ -90,7 +90,7 @@ export function Faq14() {
                 const Icon = item.icon;
                 return (
                   <CarouselItem key={index} className="basis-full pl-0 pr-6 md:basis-1/2 md:pr-8 lg:basis-1/3 lg:pr-12">
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center text-center bg-gray-100 rounded-lg p-8 h-full">
                       <div className="mb-5 md:mb-6">
                         <Icon className="size-12" />
                       </div>
@@ -140,9 +140,9 @@ export function Faq14() {
           </div>
         </Carousel>
 
-        <div className="mt-12 text-center md:mt-18 lg:mt-20">
-          <h4 className="heading-h4 mb-3 font-bold md:mb-4">Nog vragen?</h4>
-          <p className="text-medium">
+        <div className="mt-12 text-center md:mt-18 lg:mt-20 rounded-lg p-8 md:p-12 lg:p-16" style={{ backgroundColor: '#1a1a1a' }}>
+          <h4 className="heading-h4 mb-3 font-bold md:mb-4 text-white">Nog vragen?</h4>
+          <p className="text-medium text-white">
             Wij staan klaar om al uw automotive vragen te beantwoorden
           </p>
           <div className="mt-6 md:mt-8">

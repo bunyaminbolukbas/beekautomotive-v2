@@ -16,9 +16,13 @@ export function Footer1() {
 
         {/* Main content */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20">
-          {/* Logo - Later toevoegen */}
+          {/* Logo */}
           <div className="flex-shrink-0 mb-8 lg:mb-0">
-            {/* Logo komt hier later */}
+            <img
+              src="/images/beek-automotive-logo-white-transparent.png"
+              alt="Beek Automotive Logo"
+              className="h-16 md:h-20"
+            />
           </div>
 
           {/* Kolommen - rechterkant */}

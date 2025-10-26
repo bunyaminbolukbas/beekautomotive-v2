@@ -107,7 +107,7 @@ export function Product11() {
             <CarouselContent className="ml-0">
               {cars.map((car, index) => (
                 <CarouselItem key={index} className="basis-[95%] pr-6 pl-0 sm:basis-4/5 md:basis-1/2 md:pr-8 lg:basis-[33%] lg:pr-12">
-                  <a href="#" className="text-medium group">
+                  <a href="/voertuig" className="text-medium group">
                     <div className="relative mb-4 aspect-[5/6] overflow-hidden rounded-lg md:mb-5">
                       <img
                         src={car.image}

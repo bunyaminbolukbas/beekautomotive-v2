@@ -80,11 +80,19 @@ export function Navbar17() {
     >
       <div className="mx-auto flex size-full items-center justify-between">
         <Link href="/">
-          {/* Logo komt hier later */}
+          <img
+            src="/images/beek-automotive-logo-white-transparent.png"
+            alt="Beek Automotive Logo"
+            className={`transition-all duration-300 ease-in-out ${
+              useActive.isScrolled
+                ? 'h-8 md:h-10'
+                : 'h-12 md:h-14'
+            }`}
+          />
         </Link>
         <div className="flex items-center justify-center gap-2 lg:gap-4">
           <span className="text-sm font-medium text-white md:text-base">
-            Menu
+            MENU
           </span>
           <button
             className="-mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:mr-0"
@@ -185,82 +193,71 @@ export function Navbar17() {
       </div>
       <AnimatePresence>
         <ConditionalRender condition={useActive.isMenuOpen}>
-          <div className={`fixed right-0 w-full md:w-1/2 overflow-hidden transition-all duration-300 ease-in-out ${
-            useActive.isScrolled
-              ? 'top-[3.5rem] md:top-[4rem] h-[calc(100vh-3.5rem)] md:h-[calc(100vh-4rem)]'
-              : 'top-[5rem] md:top-[6rem] h-[calc(100vh-5rem)] md:h-[calc(100vh-6rem)]'
-          }`}>
+          <div className="fixed top-0 right-0 w-full md:w-1/2 h-screen overflow-hidden z-[1000]">
             <motion.div
               variants={{ open: { opacity: 1 }, close: { opacity: 0 } }}
               animate={useActive.animateMenu.menu}
               initial="close"
               exit="close"
               transition={{ duration: 0.2 }}
-              className="flex h-full flex-col overflow-auto text-black"
-              style={{ backgroundColor: '#FAFAFA' }}
+              className="flex h-full flex-col overflow-auto text-white bg-neutral-darkest/95 backdrop-blur-md"
             >
+              <div className={`flex justify-end items-center pr-[5%] transition-all duration-300 ease-in-out ${
+                useActive.isScrolled
+                  ? 'min-h-14 md:min-h-16'
+                  : 'min-h-20 md:min-h-24'
+              }`}>
+                <button
+                  onClick={useActive.closeMenu}
+                  className="flex size-12 items-center justify-center text-white text-4xl hover:opacity-70 transition-opacity leading-none"
+                  aria-label="Sluit menu"
+                >
+                  ×
+                </button>
+              </div>
               <div className="mt-px flex grow flex-col">
                 <Link
                   href="/"
                   onClick={useActive.closeMenu}
-                  className="heading-h3 flex grow items-center justify-end border-t border-black/20 px-[5%] py-4 font-bold last:border-b last:border-b-black/20 md:py-2"
+                  className="heading-h3 flex grow items-center justify-end border-t border-white/10 px-[5%] py-4 font-bold last:border-b last:border-b-white/10 md:py-2 hover:bg-white/5 transition-colors"
                 >
                   Home
                 </Link>
                 <Link
                   href="/aanbod"
                   onClick={useActive.closeMenu}
-                  className="heading-h3 flex grow items-center justify-end border-t border-black/20 px-[5%] py-4 font-bold last:border-b last:border-b-black/20 md:py-2"
+                  className="heading-h3 flex grow items-center justify-end border-t border-white/10 px-[5%] py-4 font-bold last:border-b last:border-b-white/10 md:py-2 hover:bg-white/5 transition-colors"
                 >
                   Aanbod
                 </Link>
                 <Link
                   href="/services-afleverpakket"
                   onClick={useActive.closeMenu}
-                  className="heading-h3 flex grow items-center justify-end border-t border-black/20 px-[5%] py-4 font-bold last:border-b last:border-b-black/20 md:py-2"
+                  className="heading-h3 flex grow items-center justify-end border-t border-white/10 px-[5%] py-4 font-bold last:border-b last:border-b-white/10 md:py-2 hover:bg-white/5 transition-colors"
                 >
                   Service
                 </Link>
                 <Link
                   href="/over-ons"
                   onClick={useActive.closeMenu}
-                  className="heading-h3 flex grow items-center justify-end border-t border-black/20 px-[5%] py-4 font-bold last:border-b last:border-b-black/20 md:py-2"
+                  className="heading-h3 flex grow items-center justify-end border-t border-white/10 px-[5%] py-4 font-bold last:border-b last:border-b-white/10 md:py-2 hover:bg-white/5 transition-colors"
                 >
                   Over ons
                 </Link>
                 <Link
                   href="/reviews"
                   onClick={useActive.closeMenu}
-                  className="heading-h3 flex grow items-center justify-end border-t border-black/20 px-[5%] py-4 font-bold last:border-b last:border-b-black/20 md:py-2"
+                  className="heading-h3 flex grow items-center justify-end border-t border-white/10 px-[5%] py-4 font-bold last:border-b last:border-b-white/10 md:py-2 hover:bg-white/5 transition-colors"
                 >
                   Reviews
                 </Link>
                 <Link
                   href="/contact"
                   onClick={useActive.closeMenu}
-                  className="heading-h3 flex grow items-center justify-end border-t border-black/20 px-[5%] py-4 font-bold last:border-b last:border-b-black/20 md:py-2"
+                  className="heading-h3 flex grow items-center justify-end border-t border-white/10 px-[5%] py-4 font-bold last:border-b last:border-b-white/10 md:py-2 hover:bg-white/5 transition-colors"
                 >
                   Contact
                 </Link>
-              </div>
-              <div className="flex min-h-18 items-center justify-end gap-x-4 px-[5%]">
-                <div className="flex items-center gap-3">
-                  <a href="#">
-                    <BiLogoFacebookCircle className="size-6" />
-                  </a>
-                  <a href="#">
-                    <BiLogoInstagram className="size-6" />
-                  </a>
-                  <a href="#">
-                    <FaXTwitter className="size-6" />
-                  </a>
-                  <a href="#">
-                    <BiLogoLinkedinSquare className="size-6" />
-                  </a>
-                  <a href="#">
-                    <BiLogoYoutube className="size-6" />
-                  </a>
-                </div>
               </div>
             </motion.div>
           </div>

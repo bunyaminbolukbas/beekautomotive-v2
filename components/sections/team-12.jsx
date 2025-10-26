@@ -10,9 +10,6 @@ export function Team12() {
         <div className="mx-auto max-w-lg text-center">
           <div className="mb-12 md:mb-18 lg:mb-20">
             <h2 className="heading-h2 mb-5 font-bold md:mb-6">Ons team</h2>
-            <p className="text-medium">
-              Toegewijde professionals die de passie voor auto's begrijpen
-            </p>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 md:gap-16">
