@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { FadeIn } from "@/components/ui/fade-in";
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 
@@ -96,14 +97,17 @@ export function Product11() {
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="max-w-lg">
-            <h1 className="heading-h2 mb-3 font-bold md:mb-4">Aanbod</h1>
+            <FadeIn>
+              <h1 className="heading-h2 mb-3 font-bold md:mb-4">Aanbod</h1>
+            </FadeIn>
           </div>
         </div>
-        <Carousel
-          setApi={carouselState.setApi}
-          opts={{ loop: true, align: "start" }}
-        >
-          <div className="relative pb-24">
+        <FadeIn delay={0.2}>
+          <Carousel
+            setApi={carouselState.setApi}
+            opts={{ loop: true, align: "start" }}
+          >
+            <div className="relative pb-24">
             <CarouselContent className="ml-0">
               {cars.map((car, index) => (
                 <CarouselItem key={index} className="basis-[95%] pr-6 pl-0 sm:basis-4/5 md:basis-1/2 md:pr-8 lg:basis-[33%] lg:pr-12">
@@ -174,6 +178,7 @@ export function Product11() {
             </div>
           </div>
         </Carousel>
+        </FadeIn>
       </div>
     </section>
   );

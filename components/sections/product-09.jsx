@@ -9,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
 import React, { useState, useMemo } from "react";
 
 const cars = [
@@ -245,12 +246,16 @@ export function Product9() {
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="heading-h2 mt-3 font-bold md:mt-4">
-              Ons huidige aanbod
-            </h1>
-            <p className="text-medium mt-5 md:mt-6">
-              Bij Beek Automotive draait alles om kwaliteit. We selecteren alleen de mooiste occasions in topconditie. Staat jouw droomauto er niet tussen? Wij vinden 'm voor je.
-            </p>
+            <FadeIn>
+              <h1 className="heading-h2 mt-3 font-bold md:mt-4">
+                Ons huidige aanbod
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="text-medium mt-5 md:mt-6">
+                Bij Beek Automotive draait alles om kwaliteit. We selecteren alleen de mooiste occasions in topconditie. Staat jouw droomauto er niet tussen? Wij vinden 'm voor je.
+              </p>
+            </FadeIn>
           </div>
         </div>
 
@@ -341,9 +346,10 @@ export function Product9() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 justify-items-start gap-x-5 gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:grid-cols-3 lg:gap-x-12">
+          <StaggerContainer className="grid grid-cols-1 justify-items-start gap-x-5 gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:grid-cols-3 lg:gap-x-12">
             {filteredCars.map((car, index) => (
-              <a key={index} href="/voertuig" className="text-medium group card-hover block">
+              <StaggerItem key={index}>
+                <a href="/voertuig" className="text-medium group card-hover block">
               <div className="relative mb-4 aspect-[4/3] image-zoom-container rounded-lg md:mb-5">
                 <img
                   src={car.image}
@@ -368,8 +374,9 @@ export function Product9() {
                 </div>
               </div>
             </a>
+              </StaggerItem>
           ))}
-          </div>
+          </StaggerContainer>
         )}
       </div>
     </section>

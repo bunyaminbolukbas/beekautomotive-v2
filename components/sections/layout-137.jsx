@@ -1,5 +1,6 @@
 "use client";
 
+import { FadeIn } from "@/components/ui/fade-in";
 import React, { useRef, useState, useEffect } from "react";
 
 function StatCard({ number, suffix, title }) {
@@ -60,21 +61,27 @@ export function Layout137() {
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container max-w-lg text-center">
         <div className="flex flex-col items-center justify-start">
-          <div className="mb-5 md:mb-6">
-            <img
-              src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
-              className="size-12"
-              alt="Relume logo"
-            />
-          </div>
-          <h3 className="heading-h3 font-bold">Maatwerk</h3>
-          <p className="text-medium mt-5 md:mt-6">
-            Het kopen van een auto is voor ons altijd maatwerk waarbij onze
-            klanten centraal staan. Ben je op zoek naar een bepaald merk, model
-            of type maar staat je droomauto er niet tussen? Geen paniek, we gaan
-            graag voor je op zoek binnen ons internationale netwerk om te kijken
-            wat er mogelijk is.
-          </p>
+          <FadeIn>
+            <div className="mb-5 md:mb-6">
+              <img
+                src="https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg"
+                className="size-12"
+                alt="Relume logo"
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h3 className="heading-h3 font-bold">Maatwerk</h3>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="text-medium mt-5 md:mt-6">
+              Het kopen van een auto is voor ons altijd maatwerk waarbij onze
+              klanten centraal staan. Ben je op zoek naar een bepaald merk, model
+              of type maar staat je droomauto er niet tussen? Geen paniek, we gaan
+              graag voor je op zoek binnen ons internationale netwerk om te kijken
+              wat er mogelijk is.
+            </p>
+          </FadeIn>
 
           {/* Statistics Section */}
           <div className="grid grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto mt-12 md:mt-16 lg:mt-20">

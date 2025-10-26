@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
 import React from "react";
 import { RxChevronRight } from "react-icons/rx";
 
@@ -40,15 +41,21 @@ export const Layout519 = (props) => {
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="mx-auto max-w-lg text-center">
-            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
-            <p className="md:text-md">{description}</p>
+            <FadeIn>
+              <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="md:text-md">{description}</p>
+            </FadeIn>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+        <StaggerContainer className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {cards.map((card, index) => (
-            <Card key={index} {...card} />
+            <StaggerItem key={index}>
+              <Card {...card} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

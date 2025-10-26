@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/ui/fade-in";
 import React from "react";
 import { RxChevronRight } from "react-icons/rx";
 
@@ -17,25 +18,33 @@ export function Layout81() {
       <div className="container relative z-10">
         <div className="grid grid-cols-1 items-start gap-5 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
           <div>
-            <div className="rb-5 mb-5 md:mb-6">
-              <img src={icon.src} className="size-12" alt={icon.alt} />
-            </div>
-            <h2 className="text-5xl font-bold text-text-alternative md:text-7xl lg:text-8xl">
-              {heading}
-            </h2>
+            <FadeIn>
+              <div className="rb-5 mb-5 md:mb-6">
+                <img src={icon.src} className="size-12" alt={icon.alt} />
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h2 className="text-5xl font-bold text-text-alternative md:text-7xl lg:text-8xl">
+                {heading}
+              </h2>
+            </FadeIn>
           </div>
           <div>
-            <p className="text-text-alternative md:text-md">{description}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} variant={button.variant} title={button.title} className="flex items-center gap-2 button-dark-bg" asChild>
-                  <a href="/over-ons">
-                    {button.title}
-                    {button.iconRight}
-                  </a>
-                </Button>
-              ))}
-            </div>
+            <FadeIn delay={0.2}>
+              <p className="text-text-alternative md:text-md">{description}</p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+                {buttons.map((button, index) => (
+                  <Button key={index} variant={button.variant} title={button.title} className="flex items-center gap-2 button-dark-bg" asChild>
+                    <a href="/over-ons">
+                      {button.title}
+                      {button.iconRight}
+                    </a>
+                  </Button>
+                ))}
+              </div>
+            </FadeIn>
           </div>
         </div>
       </div>

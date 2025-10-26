@@ -1,5 +1,6 @@
 "use client";
 
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
 import React from "react";
 import { BiLogoWhatsapp, BiEnvelope } from "react-icons/bi";
 
@@ -9,11 +10,14 @@ export function Team12() {
       <div className="container">
         <div className="mx-auto max-w-lg text-center">
           <div className="mb-12 md:mb-18 lg:mb-20">
-            <h2 className="heading-h2 mb-5 font-bold md:mb-6">Ons team</h2>
+            <FadeIn>
+              <h2 className="heading-h2 mb-5 font-bold md:mb-6">Ons team</h2>
+            </FadeIn>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 md:gap-16">
-          <div className="flex flex-col text-center">
+        <StaggerContainer className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 md:gap-16">
+          <StaggerItem>
+            <div className="flex flex-col text-center">
             <div className="relative mb-5 w-full overflow-hidden md:mb-6">
               <img
                 src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
@@ -37,7 +41,9 @@ export function Team12() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col text-center">
+          </StaggerItem>
+          <StaggerItem>
+            <div className="flex flex-col text-center">
             <div className="relative mb-5 w-full overflow-hidden md:mb-6">
               <img
                 src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
@@ -61,7 +67,8 @@ export function Team12() {
               </a>
             </div>
           </div>
-        </div>
+          </StaggerItem>
+        </StaggerContainer>
         <div className="mt-14 md:mt-20 lg:mt-24">
           <div className="mx-auto flex max-w-md flex-col items-center" />
         </div>
