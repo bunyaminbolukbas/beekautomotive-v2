@@ -28,9 +28,11 @@ export function Layout81() {
             <p className="text-text-alternative md:text-md">{description}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
               {buttons.map((button, index) => (
-                <Button key={index} variant={button.variant} title={button.title} className="flex items-center gap-2">
-                  {button.title}
-                  {button.iconRight}
+                <Button key={index} variant={button.variant} title={button.title} className="flex items-center gap-2 button-dark-bg" asChild>
+                  <a href="/over-ons">
+                    {button.title}
+                    {button.iconRight}
+                  </a>
                 </Button>
               ))}
             </div>

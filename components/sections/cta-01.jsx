@@ -17,9 +17,8 @@ export function Cta1() {
               Suspendisse varius enim in eros elementum tristique.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
-              <Button title="maak afspraak">maak afspraak</Button>
-              <Button title="bel ons" variant="secondary">
-                bel ons
+              <Button title="Bel ons" variant="secondary" className="carousel-button" asChild>
+                <a href="tel:+31857926363">Bel ons</a>
               </Button>
             </div>
           </div>

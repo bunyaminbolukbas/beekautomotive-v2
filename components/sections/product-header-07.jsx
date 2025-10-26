@@ -126,8 +126,8 @@ export function ProductHeader7() {
                         />
                       </CarouselItem>
                     </CarouselContent>
-                    <CarouselPrevious className="left-4 z-10 hidden size-12 opacity-0 transition-opacity group-hover:opacity-100 md:flex" />
-                    <CarouselNext className="right-4 z-10 hidden size-12 opacity-0 transition-opacity group-hover:opacity-100 md:flex" />
+                    <CarouselPrevious className="left-4 z-10 hidden size-12 opacity-0 transition-opacity group-hover:opacity-100 md:flex carousel-button" />
+                    <CarouselNext className="right-4 z-10 hidden size-12 opacity-0 transition-opacity group-hover:opacity-100 md:flex carousel-button" />
                     <div className="absolute bottom-[26px] left-0 flex w-full items-center justify-center">
                       <button
                         onClick={useActive.handleClick(0)}

@@ -133,8 +133,8 @@ export function Faq14() {
                 />
               </div>
               <div className="flex gap-2 md:gap-4">
-                <CarouselPrevious className="static size-12 -translate-y-0" />
-                <CarouselNext className="static size-12 -translate-y-0" />
+                <CarouselPrevious className="static size-12 -translate-y-0 carousel-button" />
+                <CarouselNext className="static size-12 -translate-y-0 carousel-button" />
               </div>
             </div>
           </div>
@@ -146,8 +146,8 @@ export function Faq14() {
             Wij staan klaar om al uw automotive vragen te beantwoorden
           </p>
           <div className="mt-6 md:mt-8">
-            <Button title="Contact" variant="secondary">
-              Contact
+            <Button title="WhatsApp ons" variant="secondary" className="button-dark-bg" asChild>
+              <a href="https://wa.me/31857926363">WhatsApp ons</a>
             </Button>
           </div>
         </div>

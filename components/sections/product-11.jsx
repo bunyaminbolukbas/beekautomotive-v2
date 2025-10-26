@@ -107,12 +107,12 @@ export function Product11() {
             <CarouselContent className="ml-0">
               {cars.map((car, index) => (
                 <CarouselItem key={index} className="basis-[95%] pr-6 pl-0 sm:basis-4/5 md:basis-1/2 md:pr-8 lg:basis-[33%] lg:pr-12">
-                  <a href="/voertuig" className="text-medium group">
-                    <div className="relative mb-4 aspect-[5/6] overflow-hidden rounded-lg md:mb-5">
+                  <a href="/voertuig" className="text-medium group card-hover block">
+                    <div className="relative mb-4 aspect-[5/6] image-zoom-container rounded-lg md:mb-5">
                       <img
                         src={car.image}
                         alt={car.name}
-                        className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="size-full object-cover image-zoom"
                       />
                     </div>
                     <div className="mb-2">
@@ -163,12 +163,12 @@ export function Product11() {
                 />
               </div>
               <div className="flex items-center gap-4">
-                <Button variant="secondary" title="Bekijk alles" asChild>
+                <Button variant="secondary" title="Bekijk alles" asChild className="carousel-button">
                   <a href="/aanbod">Bekijk alles</a>
                 </Button>
                 <div className="flex gap-2 md:gap-4">
-                  <CarouselPrevious className="static size-12 -translate-y-0" />
-                  <CarouselNext className="static size-12 -translate-y-0" />
+                  <CarouselPrevious className="static size-12 -translate-y-0 carousel-button" />
+                  <CarouselNext className="static size-12 -translate-y-0 carousel-button" />
                 </div>
               </div>
             </div>

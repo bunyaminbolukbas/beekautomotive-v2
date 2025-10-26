@@ -343,12 +343,12 @@ export function Product9() {
         ) : (
           <div className="grid grid-cols-1 justify-items-start gap-x-5 gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:grid-cols-3 lg:gap-x-12">
             {filteredCars.map((car, index) => (
-              <a key={index} href="/voertuig" className="text-medium group">
-              <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-lg md:mb-5">
+              <a key={index} href="/voertuig" className="text-medium group card-hover block">
+              <div className="relative mb-4 aspect-[4/3] image-zoom-container rounded-lg md:mb-5">
                 <img
                   src={car.image}
                   alt={car.name}
-                  className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="size-full object-cover image-zoom"
                 />
               </div>
               <div className="mb-2">

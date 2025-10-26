@@ -60,3 +60,68 @@
     @apply border-border;
   }
 }
+
+/* Custom animations */
+@layer components {
+  /* Button hover animation */
+  button, a[role="button"], .button {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  button:hover, a[role="button"]:hover, .button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  button:active, a[role="button"]:active, .button:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Carousel button animation */
+  .carousel-button {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .carousel-button:active {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Button on dark background */
+  .button-dark-bg {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  .button-dark-bg:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .button-dark-bg:active {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  /* Card hover animation */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Image hover zoom */
+  .image-zoom-container {
+    @apply overflow-hidden;
+  }
+
+  .image-zoom {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .image-zoom-container:hover .image-zoom {
+    @apply scale-110;
+  }
+}
