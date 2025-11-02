@@ -1,3 +1,7 @@
+/*
+OUDE MAATWERK COMPONENT - UITGECOMMENT
+Vervangen door layout-maatwerk.jsx
+
 "use client";
 
 import { FadeIn } from "@/components/ui/fade-in";
@@ -93,4 +97,10 @@ export function Layout137() {
       </div>
     </section>
   );
+}
+*/
+
+// Dit component is vervangen door layout-maatwerk.jsx
+export function Layout137() {
+  return null;
 }

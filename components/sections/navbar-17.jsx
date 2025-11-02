@@ -101,7 +101,7 @@ export function Navbar17() {
         </Link>
         <div className="flex items-center justify-center gap-2 lg:gap-4">
           <button
-            className="-mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:mr-0"
+            className="navbar-toggle -mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:mr-0"
             onClick={useActive.toggleMenu}
           >
             <span className="relative flex size-6 flex-col items-center justify-center">
@@ -223,7 +223,7 @@ export function Navbar17() {
                 <div className="flex items-center justify-center gap-2 lg:gap-4">
                   <button
                     onClick={useActive.closeMenu}
-                    className="-mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:mr-0"
+                    className="navbar-toggle -mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:mr-0"
                     aria-label="Sluit menu"
                   >
                     <span className="relative flex size-6 items-center justify-center text-white text-4xl hover:opacity-70 transition-opacity leading-none md:text-black">
