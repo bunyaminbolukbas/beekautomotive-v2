@@ -11,37 +11,35 @@ export const LayoutMaatwerk = (props) => {
   };
 
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: '#2B2A28' }}>
-      <div className="container">
-        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
-          <div>
-            <FadeIn>
-              <p className="mb-3 font-semibold text-white md:mb-4">{tagline}</p>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <h1 className="mb-5 text-5xl font-bold text-white md:mb-6 md:text-7xl lg:text-8xl">
-                {heading}
-              </h1>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <p className="text-white md:text-md">{description}</p>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-                {buttons.map((button, index) => (
-                  <Button key={index} {...button} className="carousel-button">
-                    {button.title}
-                  </Button>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-          <FadeIn delay={0.4}>
-            <div>
-              <img src={image.src} className="w-full object-cover rounded-lg" alt={image.alt} />
+    <section className="py-16 md:py-24 lg:py-28 overflow-hidden" style={{ backgroundColor: '#2B2A28' }}>
+      <div className="grid grid-cols-1 md:grid-cols-[45%_55%] lg:grid-cols-[40%_60%] gap-y-12 md:gap-0 md:items-center">
+        <div className="px-[5%] md:pl-[5%] md:pr-8 lg:pr-12">
+          <FadeIn>
+            <p className="mb-3 text-sm font-semibold text-white md:mb-4 md:text-base">{tagline}</p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h1 className="mb-5 text-3xl font-bold text-white md:mb-6 md:text-4xl lg:text-5xl">
+              {heading}
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="text-sm text-white md:text-base leading-relaxed">{description}</p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
+              {buttons.map((button, index) => (
+                <Button key={index} {...button} className="carousel-button">
+                  {button.title}
+                </Button>
+              ))}
             </div>
           </FadeIn>
         </div>
+        <FadeIn delay={0.4}>
+          <div className="px-[5%] md:px-0">
+            <img src={image.src} className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-lg md:rounded-none" alt={image.alt} />
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -56,7 +54,7 @@ export const LayoutMaatwerkDefaults = {
     { title: "Neem contact op", variant: "secondary" },
   ],
   image: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+    src: "/images/maatwerk-car.jpg",
     alt: "Beek Automotive maatwerk",
   },
 };

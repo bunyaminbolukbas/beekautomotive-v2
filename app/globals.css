@@ -132,38 +132,49 @@
     @apply scale-110;
   }
 
-  /* CTA Button styling */
-  button:not(.navbar-toggle),
-  a[role="button"],
-  .button,
-  [class*="Button"] {
+  /* Primary Button styling (default - black background) */
+  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]),
+  a[role="button"]:not([class*="secondary"]):not([class*="link"]),
+  .button:not([class*="secondary"]):not([class*="link"]) {
     border-radius: 9999px !important;
-    color: #2B2A28 !important;
-    background-color: white !important;
+    color: white !important;
+    background-color: #2B2A28 !important;
     border: 2px solid #2B2A28 !important;
     transition: all 0.3s ease !important;
   }
 
-  button:not(.navbar-toggle):hover,
-  a[role="button"]:hover,
-  .button:hover,
-  [class*="Button"]:hover {
+  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]):hover,
+  a[role="button"]:not([class*="secondary"]):not([class*="link"]):hover,
+  .button:not([class*="secondary"]):not([class*="link"]):hover {
     background-color: #C8A85E !important;
     border-color: #C8A85E !important;
     color: white !important;
   }
 
-  /* Carousel button override */
+  /* Secondary Button styling (white background, black text) */
+  button[class*="secondary"]:not(.navbar-toggle),
+  a[role="button"][class*="secondary"],
+  .button[class*="secondary"],
   .carousel-button {
     border-radius: 9999px !important;
     color: #2B2A28 !important;
     background-color: white !important;
-    border: 2px solid #2B2A28 !important;
+    border: 2px solid white !important;
+    transition: all 0.3s ease !important;
   }
 
+  button[class*="secondary"]:not(.navbar-toggle):hover,
+  a[role="button"][class*="secondary"]:hover,
+  .button[class*="secondary"]:hover,
   .carousel-button:hover {
     background-color: #C8A85E !important;
     border-color: #C8A85E !important;
     color: white !important;
+  }
+
+  /* WhatsApp icon stays gold on hover */
+  button[class*="secondary"]:hover svg,
+  a[role="button"][class*="secondary"]:hover svg {
+    color: #C8A85E !important;
   }
 }

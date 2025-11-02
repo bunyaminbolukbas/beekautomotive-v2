@@ -13,9 +13,9 @@ export function Header114() {
       </div>
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/cardealer.jpg"
-          className="size-full object-cover"
-          alt="Beek Automotive car dealer"
+          src="/images/hero-image.jpg"
+          className="size-full object-cover object-bottom"
+          alt="Beek Automotive"
         />
         <div className="absolute inset-0 bg-neutral-darkest/50" />
       </div>
