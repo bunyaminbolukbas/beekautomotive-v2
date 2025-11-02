@@ -96,9 +96,15 @@ export function Product11() {
     <section className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mb-12 md:mb-18 lg:mb-20">
-          <div className="max-w-lg">
+          <div className="max-w-3xl">
             <FadeIn>
               <h1 className="heading-h2 mb-3 font-bold md:mb-4">Collectie</h1>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="text-sm md:text-base text-scheme-text-subtle">
+                Bij BEEK Automotive vindt u een zorgvuldig samengestelde selectie jong gebruikte occasions.<br />
+                Geen massa, geen willekeur… maar auto's die écht kloppen.
+              </p>
             </FadeIn>
           </div>
         </div>
@@ -112,7 +118,7 @@ export function Product11() {
               {cars.map((car, index) => (
                 <CarouselItem key={index} className="basis-[95%] pr-6 pl-0 sm:basis-4/5 md:basis-1/2 md:pr-8 lg:basis-[33%] lg:pr-12">
                   <a href="/voertuig" className="text-medium group card-hover block">
-                    <div className="relative mb-4 aspect-[5/6] image-zoom-container rounded-lg md:mb-5">
+                    <div className="relative mb-4 aspect-[4/3] image-zoom-container rounded-lg md:mb-5">
                       <img
                         src={car.image}
                         alt={car.name}
@@ -139,33 +145,7 @@ export function Product11() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="absolute bottom-0 flex w-full items-end justify-between">
-              <div className="flex h-7 pt-[10px]">
-                <button
-                  onClick={carouselState.handleDotClick(0)}
-                  className={carouselState.dotClassName(0)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(1)}
-                  className={carouselState.dotClassName(1)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(2)}
-                  className={carouselState.dotClassName(2)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(3)}
-                  className={carouselState.dotClassName(3)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(4)}
-                  className={carouselState.dotClassName(4)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(5)}
-                  className={carouselState.dotClassName(5)}
-                />
-              </div>
+            <div className="absolute bottom-0 flex w-full items-end justify-end">
               <div className="flex items-center gap-4">
                 <Button variant="secondary" title="Bekijk alles" asChild className="carousel-button">
                   <a href="/aanbod">Bekijk alles</a>

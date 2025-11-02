@@ -116,7 +116,6 @@
 
   .card-hover:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   /* Image hover zoom */
@@ -154,18 +153,33 @@
   /* Secondary Button styling (white background, black text) */
   button[class*="secondary"]:not(.navbar-toggle),
   a[role="button"][class*="secondary"],
-  .button[class*="secondary"],
-  .carousel-button {
+  .button[class*="secondary"] {
     border-radius: 9999px !important;
     color: #2B2A28 !important;
     background-color: white !important;
-    border: 2px solid white !important;
+    border: 2px solid #2B2A28 !important;
     transition: all 0.3s ease !important;
+    outline: 2px solid white !important;
+    outline-offset: 2px !important;
   }
 
   button[class*="secondary"]:not(.navbar-toggle):hover,
   a[role="button"][class*="secondary"]:hover,
-  .button[class*="secondary"]:hover,
+  .button[class*="secondary"]:hover {
+    background-color: #C8A85E !important;
+    border-color: #C8A85E !important;
+    color: white !important;
+  }
+
+  /* Carousel navigation buttons (white arrows on black background) */
+  .carousel-button {
+    border-radius: 9999px !important;
+    color: white !important;
+    background-color: #2B2A28 !important;
+    border: 2px solid #2B2A28 !important;
+    transition: all 0.3s ease !important;
+  }
+
   .carousel-button:hover {
     background-color: #C8A85E !important;
     border-color: #C8A85E !important;

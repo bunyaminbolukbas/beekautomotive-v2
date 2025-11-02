@@ -2,8 +2,9 @@ import React from "react";
 import { Header114 } from "@/components/sections/header-114";
 import { Product11 } from "@/components/sections/product-11";
 import { LayoutMaatwerk } from "@/components/sections/layout-maatwerk";
-import { Layout81 } from "@/components/sections/layout-81";
-import { Testimonial17 } from "@/components/sections/testimonial-17";
+import { Layout194 } from "@/components/sections/layout-194";
+import { TestimonialWithStory } from "@/components/sections/testimonial-with-story";
+// import { Testimonial17 } from "@/components/sections/testimonial-17";
 
 export default function HomePage() {
   return (
@@ -11,8 +12,8 @@ export default function HomePage() {
       <Header114 />
       <Product11 />
       <LayoutMaatwerk />
-      <Layout81 />
-      <Testimonial17 />
+      <Layout194 />
+      <TestimonialWithStory />
     </>
   );
 }
