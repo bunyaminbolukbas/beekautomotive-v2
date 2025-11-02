@@ -87,7 +87,7 @@ export function Navbar17() {
             : 'min-h-20 py-4 md:min-h-24'
         }`}
       >
-      <div className="mx-auto flex size-full items-center justify-between">
+        <div className="mx-auto flex size-full items-center justify-between">
         <Link href="/">
           <img
             src="/images/beek-automotive-logo-white-transparent.png"
@@ -196,7 +196,7 @@ export function Navbar17() {
             </span>
           </button>
         </div>
-      </div>
+        </div>
       </div>
 
       <AnimatePresence>

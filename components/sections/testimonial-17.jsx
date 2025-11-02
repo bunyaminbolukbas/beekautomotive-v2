@@ -64,7 +64,7 @@ export function Testimonial17() {
   ];
 
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mx-auto mb-12 w-full max-w-lg text-center md:mb-18 lg:mb-20">
           <FadeIn>
@@ -80,15 +80,16 @@ export function Testimonial17() {
         </div>
 
         <FadeIn delay={0.2}>
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
+          <div className="overflow-hidden">
+            <Carousel
+              setApi={setApi}
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                   <Card className="flex w-full flex-col items-start justify-between p-5 md:p-6 lg:p-8 h-full">
@@ -120,6 +121,7 @@ export function Testimonial17() {
               ))}
             </CarouselContent>
           </Carousel>
+          </div>
         </FadeIn>
       </div>
     </section>

@@ -58,7 +58,7 @@ function StatCard({ number, suffix, title }) {
 
 export function Layout137() {
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-black">
+    <section className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: '#2B2A28' }}>
       <div className="container max-w-lg text-center">
         <div className="flex flex-col items-center justify-start">
           <FadeIn>

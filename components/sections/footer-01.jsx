@@ -9,7 +9,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export function Footer1() {
   return (
-    <footer className="px-[5%] py-20 md:py-24 lg:py-28 text-white" style={{ backgroundColor: '#1a1a1a' }}>
+    <footer className="px-[5%] py-20 md:py-24 lg:py-28 text-white" style={{ backgroundColor: '#2B2A28' }}>
       <div className="container max-w-7xl mx-auto">
         {/* Witte lijn boven */}
         <div className="h-px w-full bg-white/30 mb-20" />
