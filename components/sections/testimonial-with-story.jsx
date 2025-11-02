@@ -131,8 +131,8 @@ const testimonial = {
 };
 
 export const TestimonialWithStoryDefaults = {
-  heading: "Het verhaal achter BEEK Automotive",
+  heading: "Wat vinden onze klanten écht?",
   description:
-    "Elke auto heeft een verhaal. Maar ons verhaal bepaalt waarom wij de auto's kiezen die wij kiezen. BEEK Automotive is ontstaan vanuit een gedeelde passie voor auto's en de wens om het anders te doen dan de massa. Nét iets zorgvuldiger. Nét iets eerlijker. En met meer persoonlijke aandacht voor u. Wat wij vandaag doen, komt voort uit jaren ervaring in de branche en de overtuiging dat auto kopen weer persoonlijk en prettig mag zijn. Dit is waar onze basis vandaan komt — en waar dit verhaal begint.",
+    "Bij BEEK Automotive draait alles om vertrouwen. Wij kunnen zelf vertellen hoe wij werken – maar uiteindelijk zegt het veel meer hoe onze klanten dit ervaren. Daarom laten wij onze klanten spreken.\n\nDe reviews hieronder zijn geschreven door mensen die een auto bij ons gekocht hebben, met ons maatwerk traject gingen of hun auto aan ons hebben verkocht. Echt, eerlijk en ongefilterd.\n\nWij zijn trots op iedere ervaring die hier staat. Want een mooie auto afleveren is één ding… maar een tevreden klant afleveren is waar wij het voor doen.",
   testimonials: [testimonial, testimonial, testimonial, testimonial],
 };
