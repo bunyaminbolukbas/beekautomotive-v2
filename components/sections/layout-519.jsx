@@ -99,7 +99,7 @@ const premiumPakket = {
 
 export const Layout519Defaults = {
   tagline: "Afleverpakketten",
-  heading: "Kies uw afleverpakket",
+  heading: "",
   description: "Ontdek onze flexibele leveringsoplossingen die zijn ontworpen om aan uw specifieke behoeften te voldoen.",
   cards: [basisPakket, premiumPakket],
 };

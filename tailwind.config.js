@@ -15,6 +15,16 @@ const config = {
     "./services-afleverpakket-/**/*.{js,ts,jsx,tsx}",
   ],
   presets: [relumeTailwindPreset],
+  theme: {
+    extend: {
+      colors: {
+        background: '#F6F5F4',
+        text: '#2B2A28',
+        cta: '#C8A85E',
+        border: '#2B2A281A',
+      },
+    },
+  },
 };
 
 export default config;

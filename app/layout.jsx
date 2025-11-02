@@ -2,7 +2,7 @@ import "./globals.css";
 import { Navbar17 } from "@/components/sections/navbar-17";
 import { Footer1 } from "@/components/sections/footer-01";
 import { FixedContactButtons } from "@/components/sections/fixed-contact-buttons";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Michroma } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,9 +10,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const outfit = Outfit({
+const michroma = Michroma({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-michroma",
+  weight: "400",
   display: "swap",
 });
 
@@ -23,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="nl" className={`${inter.variable} ${outfit.variable}`}>
+    <html lang="nl" className={`${inter.variable} ${michroma.variable}`}>
       <body className={inter.className}>
         <Navbar17 />
         <main>

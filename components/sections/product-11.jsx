@@ -98,7 +98,7 @@ export function Product11() {
         <div className="mb-12 md:mb-18 lg:mb-20">
           <div className="max-w-lg">
             <FadeIn>
-              <h1 className="heading-h2 mb-3 font-bold md:mb-4">Aanbod</h1>
+              <h1 className="heading-h2 mb-3 font-bold md:mb-4">Collectie</h1>
             </FadeIn>
           </div>
         </div>
@@ -121,16 +121,16 @@ export function Product11() {
                     </div>
                     <div className="mb-2">
                       <h3 className="text-xl font-bold mb-1">{car.name}</h3>
-                      <div className="text-sm font-normal text-gray-600">
+                      <div className="text-sm font-normal text-scheme-text-subtle">
                         {car.specs}
                       </div>
                     </div>
                     <div className="flex justify-between items-end mt-3">
                       <div>
                         <div className="text-xl font-bold">{car.price}</div>
-                        <div className="text-sm text-gray-600">of {car.pricePerMonth} p/m</div>
+                        <div className="text-sm text-scheme-text-subtle">of {car.pricePerMonth} p/m</div>
                       </div>
-                      <div className="text-right text-sm text-gray-600">
+                      <div className="text-right text-sm text-scheme-text-subtle">
                         <div>{car.km}</div>
                         <div>{car.year}</div>
                       </div>

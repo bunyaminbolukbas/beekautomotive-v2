@@ -15,21 +15,21 @@ export function FixedContactButtons() {
       icon: Phone,
       label: 'Bel ons',
       href: 'tel:+31857926363',
-      color: 'bg-black hover:bg-black',
+      color: 'hover:opacity-90',
       tooltip: '+31 (0)88 3888 000'
     },
     {
       icon: WhatsAppIcon,
       label: 'WhatsApp',
       href: 'https://wa.me/31857926363',
-      color: 'bg-black hover:bg-black',
+      color: 'hover:opacity-90',
       tooltip: '+31 (0)88 3888 000'
     },
     {
       icon: Mail,
       label: 'E-mail',
       href: 'mailto:info@beekautomotive.nl',
-      color: 'bg-black hover:bg-black',
+      color: 'hover:opacity-90',
       tooltip: 'info@beekautomotive.nl'
     }
   ];
@@ -46,14 +46,15 @@ export function FixedContactButtons() {
               href={button.href}
               target={button.href.startsWith('http') ? '_blank' : undefined}
               rel={button.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className={`group relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 text-white shadow-md transition-all duration-300 hover:scale-105 border border-black ${button.color}`}
+              className={`group relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 text-white shadow-md transition-all duration-300 hover:scale-105 border ${button.color}`}
+              style={{ backgroundColor: '#C8A85E', borderColor: '#C8A85E' }}
               title={button.label}
             >
               <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 group-hover:opacity-0 transition-opacity duration-300" />
 
               {/* Sliding Tooltip */}
               <div className="absolute right-full top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
-                <div className="bg-black text-white text-sm h-8 sm:h-10 w-52 flex items-center px-3">
+                <div className="text-white text-sm h-8 sm:h-10 w-52 flex items-center px-3" style={{ backgroundColor: '#C8A85E' }}>
                   <IconComponent className="w-4 h-4 mr-2 text-white flex-shrink-0" />
                   <span className="font-medium text-xs">{button.tooltip}</span>
                 </div>

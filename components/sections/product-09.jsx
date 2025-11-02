@@ -248,7 +248,7 @@ export function Product9() {
           <div className="mx-auto max-w-2xl text-center">
             <FadeIn>
               <h1 className="heading-h2 mt-3 font-bold md:mt-4">
-                Ons huidige aanbod
+                Onze huidige collectie
               </h1>
             </FadeIn>
             <FadeIn delay={0.1}>
@@ -330,7 +330,7 @@ export function Product9() {
           </div>
 
           {/* Counter */}
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-scheme-text-subtle">
             {filteredCars.length} {filteredCars.length === 1 ? 'auto' : "auto's"} gevonden
           </p>
         </div>
@@ -338,10 +338,10 @@ export function Product9() {
         {/* No results message */}
         {filteredCars.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-scheme-text-subtle">
               Geen auto's gevonden met de geselecteerde filters.
             </p>
-            <p className="text-medium text-gray-500 mt-2">
+            <p className="text-medium text-scheme-text-subtle mt-2">
               Probeer andere filters of reset je zoekopdracht.
             </p>
           </div>
@@ -359,16 +359,16 @@ export function Product9() {
               </div>
               <div className="mb-2">
                 <h3 className="text-xl font-bold mb-1">{car.name}</h3>
-                <div className="text-sm font-normal text-gray-600">
+                <div className="text-sm font-normal text-scheme-text-subtle">
                   {car.specs}
                 </div>
               </div>
               <div className="flex justify-between items-end mt-3">
                 <div>
                   <div className="text-xl font-bold">{car.price}</div>
-                  <div className="text-sm text-gray-600">of {car.pricePerMonth} p/m</div>
+                  <div className="text-sm text-scheme-text-subtle">of {car.pricePerMonth} p/m</div>
                 </div>
-                <div className="text-right text-sm text-gray-600">
+                <div className="text-right text-sm text-scheme-text-subtle">
                   <div>{car.km}</div>
                   <div>{car.year}</div>
                 </div>

@@ -24,14 +24,14 @@ export function Layout81() {
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-5xl font-bold text-black md:text-7xl lg:text-8xl">
+              <h2 className="text-5xl font-bold text-scheme-text md:text-7xl lg:text-8xl">
                 {heading}
               </h2>
             </FadeIn>
           </div>
           <div>
             <FadeIn delay={0.2}>
-              <p className="text-black md:text-md">{description}</p>
+              <p className="text-scheme-text md:text-md">{description}</p>
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">

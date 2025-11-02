@@ -6,12 +6,14 @@
 @layer base {
   h1, h2, h3, h4, h5, h6,
   .heading-h1, .heading-h2, .heading-h3, .heading-h4, .heading-h5, .heading-h6 {
-    font-family: var(--font-outfit), sans-serif;
+    font-family: var(--font-michroma), sans-serif;
+    color: #2B2A28;
   }
 
   body {
     font-family: var(--font-inter), sans-serif;
-    background-color: #FAFAFA;
+    background-color: #F6F5F4;
+    color: #2B2A28;
   }
 }
 
@@ -45,7 +47,7 @@
 /* Relume scheme color classes */
 @layer utilities {
   .bg-scheme-background {
-    background-color: #FAFAFA;
+    background-color: #F6F5F4;
   }
 
   .bg-scheme-background-primary {
@@ -53,11 +55,16 @@
   }
 
   .text-scheme-text {
-    @apply text-text;
+    color: #2B2A28;
+  }
+
+  .text-scheme-text-subtle {
+    color: #2B2A28;
+    opacity: 0.6;
   }
 
   .border-scheme-border {
-    @apply border-border;
+    border-color: #2B2A281A;
   }
 }
 
@@ -123,5 +130,25 @@
 
   .image-zoom-container:hover .image-zoom {
     @apply scale-110;
+  }
+
+  /* CTA Button styling */
+  button[variant="secondary"],
+  button[variant="secondary-alt"],
+  a[variant="secondary"],
+  a[variant="secondary-alt"],
+  .bg-white.text-black {
+    background-color: #C8A85E !important;
+    color: white !important;
+    border-color: #C8A85E !important;
+  }
+
+  button[variant="secondary"]:hover,
+  button[variant="secondary-alt"]:hover,
+  a[variant="secondary"]:hover,
+  a[variant="secondary-alt"]:hover,
+  .bg-white.text-black:hover {
+    background-color: #B89850 !important;
+    opacity: 0.9;
   }
 }

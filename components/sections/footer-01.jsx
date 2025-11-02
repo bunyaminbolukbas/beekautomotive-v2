@@ -37,7 +37,7 @@ export function Footer1() {
                 </li>
                 <li>
                   <a href="/aanbod" className="text-sm text-white/70 hover:text-white transition-colors">
-                    Aanbod
+                    Collectie
                   </a>
                 </li>
                 <li>
@@ -50,11 +50,11 @@ export function Footer1() {
                     Over ons
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/reviews" className="text-sm text-white/70 hover:text-white transition-colors">
                     Reviews
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a href="/contact" className="text-sm text-white/70 hover:text-white transition-colors">
                     Contact

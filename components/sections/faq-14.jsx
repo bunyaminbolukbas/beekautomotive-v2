@@ -90,7 +90,7 @@ export function Faq14() {
                 const Icon = item.icon;
                 return (
                   <CarouselItem key={index} className="basis-full pl-0 pr-6 md:basis-1/2 md:pr-8 lg:basis-1/3 lg:pr-12">
-                    <div className="flex flex-col items-center text-center bg-gray-100 rounded-lg p-8 h-full">
+                    <div className="flex flex-col items-center text-center bg-white rounded-lg p-8 h-full">
                       <div className="mb-5 md:mb-6">
                         <Icon className="size-12" />
                       </div>

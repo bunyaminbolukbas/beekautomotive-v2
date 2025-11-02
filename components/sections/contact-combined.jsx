@@ -15,7 +15,7 @@ export function ContactCombined() {
           <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl mb-5 md:mb-6">
             Contact
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-scheme-text-subtle max-w-3xl mx-auto">
             Neem contact met ons op voor vragen, informatie of een afspraak. We helpen je graag verder.
           </p>
         </div>
@@ -54,7 +54,7 @@ export function ContactCombined() {
               <p className="mb-1">Beek Automotive</p>
               <p className="mb-1">Het Laar 6</p>
               <p className="mb-3">Wekerom</p>
-              <p className="text-gray-600">Enkel op afspraak</p>
+              <p className="text-scheme-text-subtle">Enkel op afspraak</p>
             </div>
 
             {/* Bedrijfsgegevens */}
@@ -93,7 +93,7 @@ export function ContactCombined() {
           <div className="order-2 md:order-3">
             <div className="mb-6">
               <h2 className="text-2xl font-bold mb-2">Stuur een mailtje</h2>
-              <p className="text-medium text-gray-600">
+              <p className="text-medium text-scheme-text-subtle">
                 Gebruik onderstaand formulier om ons direct een e-mail te sturen
               </p>
             </div>

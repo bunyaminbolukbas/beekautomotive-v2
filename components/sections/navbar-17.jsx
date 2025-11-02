@@ -100,9 +100,6 @@ export function Navbar17() {
           />
         </Link>
         <div className="flex items-center justify-center gap-2 lg:gap-4">
-          <span className="text-sm font-medium text-white md:text-base">
-            MENU
-          </span>
           <button
             className="-mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:mr-0"
             onClick={useActive.toggleMenu}
@@ -222,11 +219,8 @@ export function Navbar17() {
                 {/* Spacer */}
                 <div></div>
 
-                {/* MENU + close button */}
+                {/* close button */}
                 <div className="flex items-center justify-center gap-2 lg:gap-4">
-                  <span className="text-sm font-medium text-white md:text-base">
-                    MENU
-                  </span>
                   <button
                     onClick={useActive.closeMenu}
                     className="-mr-2 flex size-12 flex-col items-center justify-center justify-self-end lg:mr-0"
@@ -255,7 +249,7 @@ export function Navbar17() {
                     onClick={useActive.closeMenu}
                     className="heading-h3 flex items-center justify-center border-t border-white/10 px-[5%] py-3 font-bold hover:bg-white/5 transition-colors"
                   >
-                    Aanbod
+                    Collectie
                   </Link>
                   <Link
                     href="/services-afleverpakket"
@@ -271,13 +265,13 @@ export function Navbar17() {
                   >
                     Over ons
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/reviews"
                     onClick={useActive.closeMenu}
                     className="heading-h3 flex items-center justify-center border-t border-white/10 px-[5%] py-3 font-bold hover:bg-white/5 transition-colors"
                   >
                     Reviews
-                  </Link>
+                  </Link> */}
                   <Link
                     href="/contact"
                     onClick={useActive.closeMenu}
@@ -315,7 +309,7 @@ export function Navbar17() {
               <div className="hidden md:flex flex-1 items-center justify-center">
                 <div className="max-w-7xl w-full mx-auto px-12 grid grid-cols-3 gap-8 items-start">
 
-                  {/* Links-midden: Home, Aanbod, Service */}
+                  {/* Links-midden: Home, Collectie, Service */}
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={useActive.isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
@@ -326,6 +320,7 @@ export function Navbar17() {
                       href="/"
                       onClick={useActive.closeMenu}
                       className="text-4xl font-bold text-white hover:text-black transition-colors"
+                      style={{ fontFamily: 'var(--font-michroma)' }}
                     >
                       Home
                     </Link>
@@ -333,13 +328,15 @@ export function Navbar17() {
                       href="/aanbod"
                       onClick={useActive.closeMenu}
                       className="text-4xl font-bold text-white hover:text-black transition-colors"
+                      style={{ fontFamily: 'var(--font-michroma)' }}
                     >
-                      Aanbod
+                      Collectie
                     </Link>
                     <Link
                       href="/services-afleverpakket"
                       onClick={useActive.closeMenu}
                       className="text-4xl font-bold text-white hover:text-black transition-colors"
+                      style={{ fontFamily: 'var(--font-michroma)' }}
                     >
                       Service
                     </Link>
@@ -356,20 +353,22 @@ export function Navbar17() {
                       href="/over-ons"
                       onClick={useActive.closeMenu}
                       className="text-4xl font-bold text-white hover:text-black transition-colors"
+                      style={{ fontFamily: 'var(--font-michroma)' }}
                     >
                       Over ons
                     </Link>
-                    <Link
+                    {/* <Link
                       href="/reviews"
                       onClick={useActive.closeMenu}
                       className="text-4xl font-bold text-white hover:text-black transition-colors"
                     >
                       Reviews
-                    </Link>
+                    </Link> */}
                     <Link
                       href="/contact"
                       onClick={useActive.closeMenu}
                       className="text-4xl font-bold text-white hover:text-black transition-colors"
+                      style={{ fontFamily: 'var(--font-michroma)' }}
                     >
                       Contact
                     </Link>
