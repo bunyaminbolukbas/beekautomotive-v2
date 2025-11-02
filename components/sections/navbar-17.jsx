@@ -74,7 +74,7 @@ export function Navbar17() {
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none z-10"
         style={{
-          height: useActive.isScrolled ? '5rem' : '10rem',
+          height: useActive.isScrolled ? '4rem' : '6rem',
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, transparent 100%)',
           transition: 'height 0.3s ease-in-out'
         }}
