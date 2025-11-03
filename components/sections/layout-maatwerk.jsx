@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn } from "@/components/ui/fade-in";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const LayoutMaatwerk = (props) => {
   const { tagline, heading, description, reviewScore, reviewCount, image } = {
@@ -37,6 +38,26 @@ export const LayoutMaatwerk = (props) => {
             </FadeIn>
 
             <FadeIn delay={0.3}>
+              <div className="mt-12 md:mt-16 flex items-center gap-4">
+                <a
+                  href="https://wa.me/31857926363"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#C8A85E] text-white font-medium text-sm transition-all duration-300 hover:bg-[#B89850]"
+                >
+                  <FaWhatsapp className="size-5" />
+                  WhatsApp
+                </a>
+                <a
+                  href="/contact"
+                  className="cta-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#C8A85E] text-white font-medium text-sm transition-all duration-300 hover:bg-[#B89850]"
+                >
+                  Contact
+                </a>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.4}>
               <div className="mt-12 md:mt-16 flex items-center gap-3">
                 <div
                   className="flex items-center justify-center w-14 h-14 rounded-full bg-[#C8A85E] text-white font-bold text-lg"

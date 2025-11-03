@@ -11,14 +11,14 @@ export const Layout194 = (props) => {
     <section className="overflow-hidden py-16 md:py-24">
       <div className="grid grid-cols-1 md:grid-cols-[48%_52%] lg:grid-cols-[48%_52%] gap-y-12 md:gap-0 md:items-center">
         {/* Left Column - Image */}
-        <FadeIn delay={0.1}>
+        <FadeIn delay={0.1} className="order-2 md:order-1">
           <div className="px-[5%] md:px-0">
             <img src={image.src} className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-lg md:rounded-none" alt={image.alt} />
           </div>
         </FadeIn>
 
         {/* Right Column - Content */}
-        <div className="px-[5%] md:pr-[5%] md:pl-8 lg:pl-12 flex flex-col justify-center">
+        <div className="order-1 md:order-2 px-[5%] md:pr-[5%] md:pl-8 lg:pl-12 flex flex-col justify-center">
           {tagline && (
             <FadeIn>
               <p className="mb-8 text-sm md:text-base uppercase tracking-wide text-[#9ca3af] font-medium md:mb-12">

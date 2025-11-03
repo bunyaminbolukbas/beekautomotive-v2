@@ -120,9 +120,9 @@
   }
 
   /* Primary Button styling (default - black background) */
-  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]):not(.carousel-button),
-  a[role="button"]:not([class*="secondary"]):not([class*="link"]):not(.carousel-button),
-  .button:not([class*="secondary"]):not([class*="link"]):not(.carousel-button) {
+  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]):not(.carousel-button):not(.cta-button),
+  a[role="button"]:not([class*="secondary"]):not([class*="link"]):not(.carousel-button):not(.cta-button),
+  .button:not([class*="secondary"]):not([class*="link"]):not(.carousel-button):not(.cta-button) {
     border-radius: 9999px !important;
     color: white !important;
     background-color: #2B2A28 !important;
@@ -130,9 +130,9 @@
     transition: all 0.3s ease !important;
   }
 
-  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]):not(.carousel-button):hover,
-  a[role="button"]:not([class*="secondary"]):not([class*="link"]):not(.carousel-button):hover,
-  .button:not([class*="secondary"]):not([class*="link"]):not(.carousel-button):hover {
+  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]):not(.carousel-button):not(.cta-button):hover,
+  a[role="button"]:not([class*="secondary"]):not([class*="link"]):not(.carousel-button):not(.cta-button):hover,
+  .button:not([class*="secondary"]):not([class*="link"]):not(.carousel-button):not(.cta-button):hover {
     background-color: #C8A85E !important;
     border-color: #C8A85E !important;
     color: white !important;
