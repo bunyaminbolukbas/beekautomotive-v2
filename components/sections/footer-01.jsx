@@ -65,7 +65,7 @@ export function Footer1() {
 
             {/* Gegevens */}
             <div className="flex flex-col gap-2">
-              <h3 className="text-sm font-normal tracking-wider mb-2">Gegevens</h3>
+              <h3 className="text-sm font-normal tracking-wider mb-2 text-white">Gegevens</h3>
               <ul className="space-y-2.5">
                 <li>
                   <a href="tel:+31857926363" className="text-sm text-white/70 hover:text-white transition-colors">
@@ -97,11 +97,10 @@ export function Footer1() {
 
             {/* Showroom */}
             <div className="flex flex-col gap-2 lg:pl-12 lg:border-l lg:border-white/30">
-              <h3 className="text-sm font-normal tracking-wider mb-2">Showroom</h3>
+              <h3 className="text-sm font-normal tracking-wider mb-2 text-white">SHOWROOM</h3>
               <ul className="space-y-2.5">
                 <li className="text-sm text-white/70">
-                  <p>MA-VR: 9.00 - 18.00</p>
-                  <p>ZA: Op afspraak</p>
+                  <p>Alleen op afspraak</p>
                 </li>
               </ul>
             </div>

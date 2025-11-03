@@ -182,6 +182,29 @@
     color: white !important;
   }
 
+  /* Carousel navigation buttons on dark background (white arrows, no background) */
+  .carousel-button-dark {
+    border-radius: 9999px !important;
+    color: white !important;
+    background-color: transparent !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .carousel-button-dark svg {
+    color: white !important;
+  }
+
+  .carousel-button-dark:hover {
+    background-color: #C8A85E !important;
+    border: none !important;
+    color: white !important;
+  }
+
+  .carousel-button-dark:hover svg {
+    color: white !important;
+  }
+
   /* WhatsApp icon stays gold on hover */
   button[class*="secondary"]:hover svg,
   a[role="button"][class*="secondary"]:hover svg {

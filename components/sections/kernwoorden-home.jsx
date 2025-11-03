@@ -72,12 +72,14 @@ export function KernwoordenHome() {
   return (
     <section className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: '#2B2A28' }}>
       <div className="container">
-        <div className="mx-auto mb-12 w-full max-w-lg text-center md:mb-18 lg:mb-20">
+        <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-18 lg:mb-20">
           <FadeIn>
-            <h2 className="heading-h2 mb-5 font-bold text-white md:mb-6">De beloftes van BEEK</h2>
+            <h2 className="mb-12 text-4xl md:text-5xl lg:text-6xl font-bold text-[#f5f5f5] leading-[1.1] md:mb-16">
+              De beloftes van BEEK
+            </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-medium text-white/80">
+            <p className="text-base md:text-lg text-[#eaeaea] leading-relaxed md:leading-8 max-w-[60ch] mx-auto">
               Bij BEEK Automotive zeggen wij niet alleen wat wij doen — wij staan er ook voor. Onze kernwaarden zijn niet bedacht als verkooptekst, maar ontstaan uit hoe wij zelf behandeld willen worden wanneer wij een auto kopen. Daarom zijn deze beloftes de basis van alles wat wij doen. Eerlijk. Persoonlijk. En altijd met zorg voor de klant.
             </p>
           </FadeIn>
@@ -110,36 +112,10 @@ export function KernwoordenHome() {
                 );
               })}
             </CarouselContent>
-            <div className="absolute bottom-0 flex w-full items-end justify-between">
-              <div className="flex h-7 pt-[10px]">
-                <button
-                  onClick={carouselState.handleDotClick(0)}
-                  className={carouselState.dotClassName(0)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(1)}
-                  className={carouselState.dotClassName(1)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(2)}
-                  className={carouselState.dotClassName(2)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(3)}
-                  className={carouselState.dotClassName(3)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(4)}
-                  className={carouselState.dotClassName(4)}
-                />
-                <button
-                  onClick={carouselState.handleDotClick(5)}
-                  className={carouselState.dotClassName(5)}
-                />
-              </div>
+            <div className="absolute bottom-0 flex w-full items-end justify-end">
               <div className="flex gap-2 md:gap-4">
-                <CarouselPrevious className="static size-12 -translate-y-0 carousel-button" />
-                <CarouselNext className="static size-12 -translate-y-0 carousel-button" />
+                <CarouselPrevious className="static size-12 -translate-y-0 carousel-button-dark" />
+                <CarouselNext className="static size-12 -translate-y-0 carousel-button-dark" />
               </div>
             </div>
           </div>

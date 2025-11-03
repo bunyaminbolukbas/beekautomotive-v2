@@ -34,9 +34,9 @@ export const TestimonialWithStory = (props) => {
   return (
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20">
+        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 lg:gap-x-20">
           {/* Left side - Fixed story */}
-          <div className="order-1 md:sticky md:top-24">
+          <div className="order-1">
             <FadeIn>
               <h2 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
                 {heading}
@@ -48,7 +48,7 @@ export const TestimonialWithStory = (props) => {
           </div>
 
           {/* Right side - Scrollable reviews */}
-          <div className="order-2">
+          <div className="order-2 pt-24 md:pt-28">
             <Carousel
               setApi={setApi}
               opts={{
@@ -65,19 +65,7 @@ export const TestimonialWithStory = (props) => {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <div className="absolute bottom-0 flex w-full items-end justify-between">
-                  <div className="flex items-start">
-                    {testimonials.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => api?.scrollTo(index)}
-                        className={clsx("mx-[3px] inline-block size-2 rounded-full", {
-                          "bg-scheme-text": current === index + 1,
-                          "bg-scheme-text/20": current !== index + 1,
-                        })}
-                      />
-                    ))}
-                  </div>
+                <div className="absolute bottom-0 flex w-full items-end justify-end">
                   <div className="flex items-end justify-end gap-2 md:gap-4">
                     <CarouselPrevious className="static size-12 -translate-y-0 carousel-button" />
                     <CarouselNext className="static size-12 -translate-y-0 carousel-button" />
