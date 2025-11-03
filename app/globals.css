@@ -83,18 +83,6 @@
     background-color: rgba(0, 0, 0, 0.1);
   }
 
-  /* Carousel button animation */
-  .carousel-button {
-    @apply transition-all duration-200 ease-out;
-  }
-
-  .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.05) !important;
-  }
-
-  .carousel-button:active {
-    background-color: rgba(0, 0, 0, 0.1) !important;
-  }
 
   /* Button on dark background */
   .button-dark-bg {
@@ -132,9 +120,9 @@
   }
 
   /* Primary Button styling (default - black background) */
-  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]),
-  a[role="button"]:not([class*="secondary"]):not([class*="link"]),
-  .button:not([class*="secondary"]):not([class*="link"]) {
+  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]):not(.carousel-button),
+  a[role="button"]:not([class*="secondary"]):not([class*="link"]):not(.carousel-button),
+  .button:not([class*="secondary"]):not([class*="link"]):not(.carousel-button) {
     border-radius: 9999px !important;
     color: white !important;
     background-color: #2B2A28 !important;
@@ -142,18 +130,18 @@
     transition: all 0.3s ease !important;
   }
 
-  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]):hover,
-  a[role="button"]:not([class*="secondary"]):not([class*="link"]):hover,
-  .button:not([class*="secondary"]):not([class*="link"]):hover {
+  button:not(.navbar-toggle):not([class*="secondary"]):not([class*="link"]):not(.carousel-button):hover,
+  a[role="button"]:not([class*="secondary"]):not([class*="link"]):not(.carousel-button):hover,
+  .button:not([class*="secondary"]):not([class*="link"]):not(.carousel-button):hover {
     background-color: #C8A85E !important;
     border-color: #C8A85E !important;
     color: white !important;
   }
 
   /* Secondary Button styling (white background, black text) */
-  button[class*="secondary"]:not(.navbar-toggle),
-  a[role="button"][class*="secondary"],
-  .button[class*="secondary"] {
+  button[class*="secondary"]:not(.navbar-toggle):not(.carousel-button),
+  a[role="button"][class*="secondary"]:not(.carousel-button),
+  .button[class*="secondary"]:not(.carousel-button) {
     border-radius: 9999px !important;
     color: #2B2A28 !important;
     background-color: white !important;
@@ -163,26 +151,34 @@
     outline-offset: 2px !important;
   }
 
-  button[class*="secondary"]:not(.navbar-toggle):hover,
-  a[role="button"][class*="secondary"]:hover,
-  .button[class*="secondary"]:hover {
+  button[class*="secondary"]:not(.navbar-toggle):not(.carousel-button):hover,
+  a[role="button"][class*="secondary"]:not(.carousel-button):hover,
+  .button[class*="secondary"]:not(.carousel-button):hover {
     background-color: #C8A85E !important;
     border-color: #C8A85E !important;
     color: white !important;
   }
 
-  /* Carousel navigation buttons (white arrows on black background) */
+  /* Carousel navigation buttons (black arrows on page background) */
   .carousel-button {
     border-radius: 9999px !important;
-    color: white !important;
-    background-color: #2B2A28 !important;
-    border: 2px solid #2B2A28 !important;
+    color: #2B2A28 !important;
+    background-color: #F6F5F4 !important;
+    border: none !important;
     transition: all 0.3s ease !important;
+  }
+
+  .carousel-button svg {
+    color: #2B2A28 !important;
   }
 
   .carousel-button:hover {
     background-color: #C8A85E !important;
-    border-color: #C8A85E !important;
+    border: none !important;
+    color: white !important;
+  }
+
+  .carousel-button:hover svg {
     color: white !important;
   }
 
