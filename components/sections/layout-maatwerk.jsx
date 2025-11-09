@@ -88,7 +88,7 @@ export const LayoutMaatwerk = (props) => {
 };
 
 export const LayoutMaatwerkDefaults = {
-  tagline: "Waarom kiezen voor BEEK Automotive",
+  tagline: "",
   heading: "De perfecte auto bestaat. Wij vinden 'm.",
   description: "",
   reviewScore: "9.9",

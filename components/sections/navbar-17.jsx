@@ -240,48 +240,54 @@ export function Navbar17() {
                   <Link
                     href="/"
                     onClick={useActive.closeMenu}
-                    className="heading-h3 flex items-center justify-center border-t border-white/10 px-[5%] py-3 font-bold hover:bg-white/5 transition-colors"
+                    className="flex items-center justify-center px-[5%] py-3 text-lg font-semibold hover:bg-white/5 transition-colors"
+                    style={{ fontFamily: 'var(--font-michroma)' }}
                   >
                     Home
                   </Link>
                   <Link
                     href="/aanbod"
                     onClick={useActive.closeMenu}
-                    className="heading-h3 flex items-center justify-center border-t border-white/10 px-[5%] py-3 font-bold hover:bg-white/5 transition-colors"
+                    className="flex items-center justify-center px-[5%] py-3 text-lg font-semibold hover:bg-white/5 transition-colors"
+                    style={{ fontFamily: 'var(--font-michroma)' }}
                   >
                     Collectie
                   </Link>
                   <Link
                     href="/services-afleverpakket"
                     onClick={useActive.closeMenu}
-                    className="heading-h3 flex items-center justify-center border-t border-white/10 px-[5%] py-3 font-bold hover:bg-white/5 transition-colors"
+                    className="flex items-center justify-center px-[5%] py-3 text-lg font-semibold hover:bg-white/5 transition-colors"
+                    style={{ fontFamily: 'var(--font-michroma)' }}
                   >
                     Service
                   </Link>
                   <Link
                     href="/over-ons"
                     onClick={useActive.closeMenu}
-                    className="heading-h3 flex items-center justify-center border-t border-white/10 px-[5%] py-3 font-bold hover:bg-white/5 transition-colors"
+                    className="flex items-center justify-center px-[5%] py-3 text-lg font-semibold hover:bg-white/5 transition-colors"
+                    style={{ fontFamily: 'var(--font-michroma)' }}
                   >
                     Over ons
                   </Link>
                   {/* <Link
                     href="/reviews"
                     onClick={useActive.closeMenu}
-                    className="heading-h3 flex items-center justify-center border-t border-white/10 px-[5%] py-3 font-bold hover:bg-white/5 transition-colors"
+                    className="flex items-center justify-center px-[5%] py-3 text-lg font-semibold hover:bg-white/5 transition-colors"
+                    style={{ fontFamily: 'var(--font-michroma)' }}
                   >
                     Reviews
                   </Link> */}
                   <Link
                     href="/contact"
                     onClick={useActive.closeMenu}
-                    className="heading-h3 flex items-center justify-center border-t border-white/10 px-[5%] py-3 font-bold hover:bg-white/5 transition-colors"
+                    className="flex items-center justify-center px-[5%] py-3 text-lg font-semibold hover:bg-white/5 transition-colors"
+                    style={{ fontFamily: 'var(--font-michroma)' }}
                   >
                     Contact
                   </Link>
 
                   {/* GEÏNTERESSEERD sectie met ruimte erboven */}
-                  <div className="px-[5%] py-4 border-t border-white/10 bg-black/20 mt-12">
+                  <div className="px-[5%] py-4 bg-black/20 mt-12">
                     <div className="flex flex-col gap-3 text-center">
                       <h3 className="text-base font-bold tracking-wider text-white">GEÏNTERESSEERD?</h3>
                       <p className="text-white text-xs leading-relaxed">
