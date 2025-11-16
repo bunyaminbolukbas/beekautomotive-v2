@@ -2,15 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
-import React, { useState, useMemo } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useState, useMemo, useEffect } from "react";
+import { BiFilterAlt } from "react-icons/bi";
+import { IoClose } from "react-icons/io5";
 
 const cars = [
   {
@@ -181,40 +178,64 @@ const cars = [
 ];
 
 export function Product9() {
+  // Filter drawer state
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+
   // Filter state
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedBrand, setSelectedBrand] = useState("all");
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [selectedTransmissions, setSelectedTransmissions] = useState([]);
+  const [selectedFuels, setSelectedFuels] = useState([]);
   const [sortPrice, setSortPrice] = useState("asc");
-  const [selectedTransmission, setSelectedTransmission] = useState("all");
-  const [selectedFuel, setSelectedFuel] = useState("all");
 
-  // Extract unique brands from cars data
+  // Prevent body scroll when drawer is open
+  useEffect(() => {
+    if (isFilterOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isFilterOpen]);
+
+  // Extract unique values from cars data
   const brands = useMemo(() => {
     const uniqueBrands = [...new Set(cars.map(car => car.name.split(' ')[0]))];
     return uniqueBrands.sort();
   }, []);
 
+  const transmissions = useMemo(() => {
+    return [...new Set(cars.map(car => car.transmission))].sort();
+  }, []);
+
+  const fuels = useMemo(() => {
+    return [...new Set(cars.map(car => car.fuel))].sort();
+  }, []);
+
   // Filter and sort logic
   const filteredCars = useMemo(() => {
-    // First filter
     let filtered = cars.filter(car => {
       // Search filter
-      const matchesSearch = car.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      const matchesSearch = searchTerm === "" ||
+                           car.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            car.specs.toLowerCase().includes(searchTerm.toLowerCase());
 
-      // Brand filter
-      const matchesBrand = selectedBrand === "all" || car.name.startsWith(selectedBrand);
+      // Brand filter - multiple selection
+      const carBrand = car.name.split(' ')[0];
+      const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(carBrand);
 
-      // Transmission filter
-      const matchesTransmission = selectedTransmission === "all" || car.transmission === selectedTransmission;
+      // Transmission filter - multiple selection
+      const matchesTransmission = selectedTransmissions.length === 0 || selectedTransmissions.includes(car.transmission);
 
-      // Fuel filter
-      const matchesFuel = selectedFuel === "all" || car.fuel === selectedFuel;
+      // Fuel filter - multiple selection
+      const matchesFuel = selectedFuels.length === 0 || selectedFuels.includes(car.fuel);
 
       return matchesSearch && matchesBrand && matchesTransmission && matchesFuel;
     });
 
-    // Then sort by price
+    // Sort by price
     if (sortPrice === "asc") {
       filtered = [...filtered].sort((a, b) => {
         const priceA = parseInt(a.price.replace(/[€.,]/g, ''));
@@ -230,15 +251,37 @@ export function Product9() {
     }
 
     return filtered;
-  }, [searchTerm, selectedBrand, sortPrice, selectedTransmission, selectedFuel]);
+  }, [searchTerm, selectedBrands, selectedTransmissions, selectedFuels, sortPrice]);
+
+  // Count active filters
+  const activeFilterCount = selectedBrands.length + selectedTransmissions.length + selectedFuels.length;
 
   // Reset filters
   const resetFilters = () => {
     setSearchTerm("");
-    setSelectedBrand("all");
+    setSelectedBrands([]);
+    setSelectedTransmissions([]);
+    setSelectedFuels([]);
     setSortPrice("asc");
-    setSelectedTransmission("all");
-    setSelectedFuel("all");
+  };
+
+  // Toggle multi-select
+  const toggleBrand = (brand) => {
+    setSelectedBrands(prev =>
+      prev.includes(brand) ? prev.filter(b => b !== brand) : [...prev, brand]
+    );
+  };
+
+  const toggleTransmission = (transmission) => {
+    setSelectedTransmissions(prev =>
+      prev.includes(transmission) ? prev.filter(t => t !== transmission) : [...prev, transmission]
+    );
+  };
+
+  const toggleFuel = (fuel) => {
+    setSelectedFuels(prev =>
+      prev.includes(fuel) ? prev.filter(f => f !== fuel) : [...prev, fuel]
+    );
   };
 
   return (
@@ -259,81 +302,216 @@ export function Product9() {
           </div>
         </div>
 
-        {/* Filter Section */}
+        {/* Search and Filter Bar */}
         <div className="mb-8 md:mb-12 space-y-4">
-          {/* Search bar - narrower on desktop */}
-          <div className="w-full md:max-w-md">
-            <Input
-              type="text"
-              placeholder="🔍 Zoeken op merk, model of specs..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full"
-            />
-          </div>
+          <div className="flex justify-between items-center gap-3">
+            {/* Search bar */}
+            <div className="w-full sm:w-64 md:w-80">
+              <Input
+                type="text"
+                placeholder="🔍 Zoeken..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full"
+              />
+            </div>
 
-          {/* Filter dropdowns */}
-          <div className="flex flex-wrap gap-3">
-            <Select value={selectedBrand} onValueChange={setSelectedBrand}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Merk" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle merken</SelectItem>
-                {brands.map(brand => (
-                  <SelectItem key={brand} value={brand}>{brand}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <Select value={sortPrice} onValueChange={setSortPrice}>
-              <SelectTrigger className="w-[160px]">
-                <SelectValue placeholder="Prijs" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="asc">Oplopend</SelectItem>
-                <SelectItem value="desc">Aflopend</SelectItem>
-              </SelectContent>
-            </Select>
-
-            <Select value={selectedTransmission} onValueChange={setSelectedTransmission}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Transmissie" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle transmissies</SelectItem>
-                <SelectItem value="Automaat">Automaat</SelectItem>
-                <SelectItem value="Handgeschakeld">Handgeschakeld</SelectItem>
-              </SelectContent>
-            </Select>
-
-            <Select value={selectedFuel} onValueChange={setSelectedFuel}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Brandstof" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle brandstoffen</SelectItem>
-                <SelectItem value="Benzine">Benzine</SelectItem>
-                <SelectItem value="Diesel">Diesel</SelectItem>
-                <SelectItem value="Elektrisch">Elektrisch</SelectItem>
-                <SelectItem value="Hybride">Hybride</SelectItem>
-              </SelectContent>
-            </Select>
-
+            {/* Filter Button */}
             <Button
-              variant="secondary"
-              size="sm"
-              onClick={resetFilters}
+              onClick={() => setIsFilterOpen(true)}
+              className="flex items-center gap-2 relative shrink-0"
             >
-              Reset
+              <BiFilterAlt className="size-5" />
+              <span className="hidden sm:inline">Filters</span>
+              {activeFilterCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[#C8A85E] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                  {activeFilterCount}
+                </span>
+              )}
             </Button>
           </div>
+
+          {/* Active filter chips */}
+          {(selectedBrands.length > 0 || selectedTransmissions.length > 0 || selectedFuels.length > 0) && (
+            <div className="flex flex-wrap gap-2">
+              {selectedBrands.map(brand => (
+                <button
+                  key={brand}
+                  onClick={() => toggleBrand(brand)}
+                  className="inline-flex items-center gap-1 px-3 py-1 bg-gray-200 rounded-full text-sm hover:bg-gray-300 transition-colors"
+                >
+                  {brand}
+                  <IoClose className="size-4" />
+                </button>
+              ))}
+              {selectedTransmissions.map(transmission => (
+                <button
+                  key={transmission}
+                  onClick={() => toggleTransmission(transmission)}
+                  className="inline-flex items-center gap-1 px-3 py-1 bg-gray-200 rounded-full text-sm hover:bg-gray-300 transition-colors"
+                >
+                  {transmission}
+                  <IoClose className="size-4" />
+                </button>
+              ))}
+              {selectedFuels.map(fuel => (
+                <button
+                  key={fuel}
+                  onClick={() => toggleFuel(fuel)}
+                  className="inline-flex items-center gap-1 px-3 py-1 bg-gray-200 rounded-full text-sm hover:bg-gray-300 transition-colors"
+                >
+                  {fuel}
+                  <IoClose className="size-4" />
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Counter */}
           <p className="text-sm text-scheme-text-subtle">
             {filteredCars.length} {filteredCars.length === 1 ? 'auto' : "auto's"} gevonden
           </p>
         </div>
+
+        {/* Filter Drawer */}
+        <AnimatePresence>
+          {isFilterOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsFilterOpen(false)}
+                className="fixed inset-0 bg-black/50 z-[9998]"
+              />
+
+              {/* Drawer */}
+              <motion.div
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "100%" }}
+                transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-xl z-[9999] max-h-[85vh] overflow-hidden flex flex-col"
+              >
+                {/* Header */}
+                <div className="flex items-center justify-between p-4 border-b sticky top-0 bg-white z-10">
+                  <h2 className="text-xl font-bold">Filters</h2>
+                  <button
+                    onClick={() => setIsFilterOpen(false)}
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  >
+                    <IoClose className="size-6" />
+                  </button>
+                </div>
+
+                {/* Content - Scrollable */}
+                <div className="overflow-y-auto flex-1 p-4 space-y-6">
+                  {/* Sort */}
+                  <div>
+                    <h3 className="font-semibold mb-3">Prijs sorteren</h3>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => setSortPrice("asc")}
+                        className={`flex-1 px-4 py-2 rounded-lg border-2 transition-colors ${
+                          sortPrice === "asc"
+                            ? "border-[#C8A85E] bg-[#C8A85E]/10 text-[#C8A85E] font-semibold"
+                            : "border-gray-200 hover:border-gray-300"
+                        }`}
+                      >
+                        Laag → Hoog
+                      </button>
+                      <button
+                        onClick={() => setSortPrice("desc")}
+                        className={`flex-1 px-4 py-2 rounded-lg border-2 transition-colors ${
+                          sortPrice === "desc"
+                            ? "border-[#C8A85E] bg-[#C8A85E]/10 text-[#C8A85E] font-semibold"
+                            : "border-gray-200 hover:border-gray-300"
+                        }`}
+                      >
+                        Hoog → Laag
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Brands */}
+                  <div>
+                    <h3 className="font-semibold mb-3">Merk</h3>
+                    <div className="space-y-2">
+                      {brands.map(brand => (
+                        <label
+                          key={brand}
+                          className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors"
+                        >
+                          <Checkbox
+                            checked={selectedBrands.includes(brand)}
+                            onCheckedChange={() => toggleBrand(brand)}
+                          />
+                          <span className="flex-1">{brand}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Transmission */}
+                  <div>
+                    <h3 className="font-semibold mb-3">Transmissie</h3>
+                    <div className="space-y-2">
+                      {transmissions.map(transmission => (
+                        <label
+                          key={transmission}
+                          className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors"
+                        >
+                          <Checkbox
+                            checked={selectedTransmissions.includes(transmission)}
+                            onCheckedChange={() => toggleTransmission(transmission)}
+                          />
+                          <span className="flex-1">{transmission}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Fuel */}
+                  <div>
+                    <h3 className="font-semibold mb-3">Brandstof</h3>
+                    <div className="space-y-2">
+                      {fuels.map(fuel => (
+                        <label
+                          key={fuel}
+                          className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors"
+                        >
+                          <Checkbox
+                            checked={selectedFuels.includes(fuel)}
+                            onCheckedChange={() => toggleFuel(fuel)}
+                          />
+                          <span className="flex-1">{fuel}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer - Sticky */}
+                <div className="border-t p-4 bg-white sticky bottom-0 flex gap-3">
+                  <Button
+                    variant="outline"
+                    onClick={resetFilters}
+                    className="flex-1"
+                  >
+                    Reset
+                  </Button>
+                  <Button
+                    onClick={() => setIsFilterOpen(false)}
+                    className="flex-1 bg-[#C8A85E] hover:bg-[#B89850]"
+                  >
+                    {filteredCars.length} {filteredCars.length === 1 ? 'resultaat' : 'resultaten'} tonen
+                  </Button>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
 
         {/* No results message */}
         {filteredCars.length === 0 ? (
