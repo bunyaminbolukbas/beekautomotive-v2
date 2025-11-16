@@ -61,12 +61,12 @@ export const LayoutMaatwerk = (props) => {
               <div className="mt-12 md:mt-16 flex items-center gap-3">
                 <div
                   className="flex items-center justify-center w-14 h-14 rounded-full bg-[#C8A85E] text-white font-bold text-lg"
-                  aria-label={`Score ${reviewScore} uit 10`}
+                  aria-label={`Score ${reviewScore} uit 5`}
                 >
                   {reviewScore}
                 </div>
                 <p className="text-sm md:text-base text-[#9ca3af]">
-                  {reviewCount} klanten waarderen ons gemiddeld met een {reviewScore}/10.
+                  {reviewCount} klanten waarderen ons gemiddeld met een {reviewScore} op Google
                 </p>
               </div>
             </FadeIn>
@@ -91,8 +91,8 @@ export const LayoutMaatwerkDefaults = {
   tagline: "",
   heading: "De perfecte auto bestaat. Wij vinden 'm.",
   description: "",
-  reviewScore: "9.9",
-  reviewCount: "263",
+  reviewScore: "4.8",
+  reviewCount: "70",
   image: {
     src: "/images/maatwerk-car.jpg",
     alt: "Beek Automotive maatwerk",

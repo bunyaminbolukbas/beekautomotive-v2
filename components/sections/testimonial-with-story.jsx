@@ -105,22 +105,74 @@ const TestimonialCard = ({ testimonial }) => {
   );
 };
 
-const testimonial = {
-  numberOfStars: 5,
-  quote:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-  image: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-    alt: "Testimonial image",
-  },
-  name: "Jan Jansen",
-  position: "Klant",
-  companyName: "Amsterdam",
-};
-
 export const TestimonialWithStoryDefaults = {
   heading: "Wat vinden onze klanten écht?",
   description:
     "Bij BEEK Automotive draait alles om vertrouwen. Wij kunnen zelf vertellen hoe wij werken – maar uiteindelijk zegt het veel meer hoe onze klanten dit ervaren. Daarom laten wij onze klanten spreken.\n\nDe reviews hieronder zijn geschreven door mensen die een auto bij ons gekocht hebben, met ons maatwerk traject gingen of hun auto aan ons hebben verkocht. Echt, eerlijk en ongefilterd.\n\nWij zijn trots op iedere ervaring die hier staat. Want een mooie auto afleveren is één ding… maar een tevreden klant afleveren is waar wij het voor doen.",
-  testimonials: [testimonial, testimonial, testimonial, testimonial],
+  testimonials: [
+    {
+      numberOfStars: 5,
+      quote:
+        "Zorgeloos mijn Peugeot 208 uit Frankrijk geïmporteerd via Car Relief Automotive een echte aanrader! Het importproces duurde ongeveer één maand, wat ik heel netjes vind gezien alles wat erbij komt kijken. De auto werd uiteindelijk in perfecte staat geleverd.",
+      name: "Kelly Dalmeijer",
+      position: "Import klant",
+      companyName: "Peugeot 208",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        "Halverwege juni kocht ik een occasion bij Car-Relief in Wekerom. Ik ben erg te spreken over de service en na 1.5 maand ook nog erg blij met mijn nieuwe auto. Zelfs een vertraagde betaling, door een foutje van mijn kant, was geen probleem.",
+      name: "Dennis",
+      position: "Klant",
+      companyName: "Ford Focus",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        "Ik zou Car Relief Automotive zeker aanraden! Vriendelijk geholpen tijdens het eerste bezoek. Eerlijke en duidelijke communicatie. Na enkele dagen bleek er een klein probleem met de auto. Dit is snel en kosteloos opgelost. Nog steeds blij met de keuze.",
+      name: "Stefanie Scheffers",
+      position: "Klant",
+      companyName: "Auto koop",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        "Gisteren mijn nieuw aangekochte Ford focus opgehaald en is keurig afgeleverd. Was beschadiging op bumper en heeft hij heel mooi laten herstellen. Erg blij mee en rijd heerlijk. In love with this Ford!",
+      name: "Bianca Vlaanderen",
+      position: "Klant",
+      companyName: "Ford Focus",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        "Zeer tevreden over de service en communicatie van Car Relief. Wij wonen in het noorden van Nederland en de auto werd thuis afgeleverd. Na gebruik bleek er een probleem met de airco. Deze werd snel gerepareerd op kosten van Car Relief. Top geregeld.",
+      name: "Frans Warntjes",
+      position: "Klant",
+      companyName: "Thuisbezorging",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        "Ontzettend fijne garage en een zeer prettige ervaring. Vanaf het eerste bericht ben ik snel, professioneel en heel vriendelijk geholpen. Contact in het koopproces verliep heel soepel en elke vraag werd met zorg beantwoord.",
+      name: "Silva Hoenen",
+      position: "Klant",
+      companyName: "Auto koop",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        "Mooie audi a3 gekocht bij Car Relief 1 jaar geleden nog steeds heel tevreden. Na 7 maanden klein probleempje met de auto had, dit heeft Car Relief netjes voor ons opgelost omdat het nog in de garantie zat. Top autogarage zeker een aanrader.",
+      name: "Mo C",
+      position: "Klant",
+      companyName: "Audi A3",
+    },
+    {
+      numberOfStars: 5,
+      quote:
+        "Ik ben ontzettend tevreden met mijn ervaring bij Car Relief. Vanaf eerste contact werd ik vriendelijk en professioneel geholpen. Hij nam de tijd om mijn wensen te begrijpen en gaf eerlijk advies over welke SUV het beste bij mij paste.",
+      name: "Carlos Brazao",
+      position: "Klant",
+      companyName: "SUV koop",
+    },
+  ],
 };
