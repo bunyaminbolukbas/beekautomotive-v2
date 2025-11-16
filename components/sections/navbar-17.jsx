@@ -288,7 +288,7 @@ export function Navbar17() {
                 </div>
 
                 {/* GEÏNTERESSEERD sectie - naar beneden geplaatst met flexbox */}
-                <div className="px-[5%] py-4 bg-black/20 mt-auto mb-6">
+                <div className="px-[5%] py-4 bg-black/20 mt-auto mb-20">
                   <div className="flex flex-col gap-3 text-center">
                     <h3 className="text-base font-bold tracking-wider text-white">GEÏNTERESSEERD?</h3>
                     <p className="text-white text-xs leading-relaxed">
